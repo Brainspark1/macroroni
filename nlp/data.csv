@@ -1,0 +1,191 @@
+,0,1
+0,go left,MOVE_LEFT
+1,move left,MOVE_LEFT
+2,left,MOVE_LEFT
+3,back left,MOVE_LEFT
+4,walk left,MOVE_LEFT
+5,backward,MOVE_LEFT
+6,go right,MOVE_RIGHT
+7,move right,MOVE_RIGHT
+8,right,MOVE_RIGHT
+9,forward,MOVE_RIGHT
+10,move ahead,MOVE_RIGHT
+11,jump,JUMP
+12,hop,JUMP
+13,leap,JUMP
+14,up,JUMP
+15,jump now,JUMP
+16,run,RUN
+17,sprint,RUN
+18,go fast,RUN
+19,speed up,RUN
+20,full speed,RUN
+21,duck,DUCK
+22,crouch,DUCK
+23,go low,DUCK
+24,get down,DUCK
+25,bend down,DUCK
+26,fire,FIRE
+27,shoot,FIRE
+28,throw fireball,FIRE
+29,blast,FIRE
+30,attack,FIRE
+31,stop,STOP
+32,freeze,STOP
+33,hold still,STOP
+34,don't move,STOP
+35,stay,STOP
+36,pause,PAUSE
+37,stop game,PAUSE
+38,pause game,PAUSE
+39,take a break,PAUSE
+40,halt,PAUSE
+41,go down,ENTER_PIPE
+42,enter pipe,ENTER_PIPE
+43,drop down,ENTER_PIPE
+44,go inside,ENTER_PIPE
+45,down pipe,ENTER_PIPE
+46,turn left,MOVE_LEFT
+47,strafe left,MOVE_LEFT
+48,step left,MOVE_LEFT
+49,retreat left,MOVE_LEFT
+50,turn right,MOVE_RIGHT
+51,strafe right,MOVE_RIGHT
+52,step right,MOVE_RIGHT
+53,advance right,MOVE_RIGHT
+54,bounce,JUMP
+55,leap high,JUMP
+56,spring up,JUMP
+57,elevate,JUMP
+58,dash,RUN
+59,hurry,RUN
+60,move quickly,RUN
+61,accelerate,RUN
+62,kneel,DUCK
+63,bend low,DUCK
+64,get under cover,DUCK
+65,hide,DUCK
+66,launch missile,FIRE
+67,attack target,FIRE
+68,send out a shot,FIRE
+69,engage,FIRE
+70,halt movement,STOP
+71,cease action,STOP
+72,stand still,STOP
+73,pause movement,STOP
+74,break game,PAUSE
+75,temporarily stop,PAUSE
+76,hold game,PAUSE
+77,suspend,PAUSE
+78,go inside pipe,ENTER_PIPE
+79,descend tube,ENTER_PIPE
+80,enter drainage,ENTER_PIPE
+81,drop in pipe,ENTER_PIPE
+82,move to the left,MOVE_LEFT
+83,go sideways left,MOVE_LEFT
+84,step to the left,MOVE_LEFT
+85,shift left,MOVE_LEFT
+86,move to the right,MOVE_RIGHT
+87,go sideways right,MOVE_RIGHT
+88,step to the right,MOVE_RIGHT
+89,shift right,MOVE_RIGHT
+90,jump over,JUMP
+91,spring,JUMP
+92,elevate up,JUMP
+93,pounce,JUMP
+94,run quickly,RUN
+95,move at speed,RUN
+96,accelerate fast,RUN
+97,burst forward,RUN
+98,duck down,DUCK
+99,get low,DUCK
+100,crawl,DUCK
+101,take cover,DUCK
+102,shoot fire,FIRE
+103,cast spell,FIRE
+104,hurl projectile,FIRE
+105,attack now,FIRE
+106,stop movement,STOP
+107,freeze action,STOP
+108,cease all activity,STOP
+109,remain still,STOP
+110,pause the action,PAUSE
+111,break from game,PAUSE
+112,temporarily halt,PAUSE
+113,suspend game,PAUSE
+114,go into pipe,ENTER_PIPE
+115,enter the tube,ENTER_PIPE
+116,descend into pipe,ENTER_PIPE
+117,dive into pipe,ENTER_PIPE
+118,move to the left,MOVE_LEFT
+119,go sideways left,MOVE_LEFT
+120,step to the left,MOVE_LEFT
+121,shift left,MOVE_LEFT
+122,move to the right,MOVE_RIGHT
+123,go sideways right,MOVE_RIGHT
+124,step to the right,MOVE_RIGHT
+125,shift right,MOVE_RIGHT
+126,jump over,JUMP
+127,spring,JUMP
+128,elevate up,JUMP
+129,pounce,JUMP
+130,run quickly,RUN
+131,move at speed,RUN
+132,accelerate fast,RUN
+133,burst forward,RUN
+134,duck down,DUCK
+135,get low,DUCK
+136,crawl,DUCK
+137,take cover,DUCK
+138,shoot fire,FIRE
+139,cast spell,FIRE
+140,hurl projectile,FIRE
+141,attack now,FIRE
+142,stop movement,STOP
+143,freeze action,STOP
+144,cease all activity,STOP
+145,remain still,STOP
+146,pause the action,PAUSE
+147,break from game,PAUSE
+148,temporarily halt,PAUSE
+149,suspend game,PAUSE
+150,go into pipe,ENTER_PIPE
+151,enter the tube,ENTER_PIPE
+152,descend into pipe,ENTER_PIPE
+153,dive into pipe,ENTER_PIPE
+154,move to the left,MOVE_LEFT
+155,go sideways left,MOVE_LEFT
+156,step to the left,MOVE_LEFT
+157,shift left,MOVE_LEFT
+158,move to the right,MOVE_RIGHT
+159,go sideways right,MOVE_RIGHT
+160,step to the right,MOVE_RIGHT
+161,shift right,MOVE_RIGHT
+162,jump over,JUMP
+163,spring,JUMP
+164,elevate up,JUMP
+165,pounce,JUMP
+166,run quickly,RUN
+167,move at speed,RUN
+168,accelerate fast,RUN
+169,burst forward,RUN
+170,duck down,DUCK
+171,get low,DUCK
+172,crawl,DUCK
+173,take cover,DUCK
+174,shoot fire,FIRE
+175,cast spell,FIRE
+176,hurl projectile,FIRE
+177,attack now,FIRE
+178,stop movement,STOP
+179,freeze action,STOP
+180,cease all activity,STOP
+181,remain still,STOP
+182,pause the action,PAUSE
+183,break from game,PAUSE
+184,temporarily halt,PAUSE
+185,suspend game,PAUSE
+186,go into pipe,ENTER_PIPE
+187,enter the tube,ENTER_PIPE
+188,descend into pipe,ENTER_PIPE
+189,dive into pipe,ENTER_PIPE
