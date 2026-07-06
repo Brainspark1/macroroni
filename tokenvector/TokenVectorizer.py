@@ -58,18 +58,14 @@ def build_vocab(sentences):
     # tokens to integer ids
     vocab = {}
 
-    index_special = 0
     # add special tokens
     for token in SPECIAL_TOKENS:
-        vocab[token] = len(vocab)
-        index_special += 1 
+        vocab[token] = len(vocab) # next id determined by dictionary size/what index value is next
 
-    index_other = 0
     # add every unique token
     for token in counter:
         if token not in vocab:
             vocab[token] = len(vocab)
-            index_other += 1
 
     # swaps positions of index and word to map id back to word for decoding down the line
     id_to_word = {index: word for word, index in vocab.items()}
