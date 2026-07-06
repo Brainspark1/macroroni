@@ -1,3 +1,5 @@
+# credit for most of vectorizer code: https://agombert.github.io/AdvancedNLPClasses/chapter3/Session_3_1_Word2Vec_Training/
+
 import re
 from collections import Counter
 
