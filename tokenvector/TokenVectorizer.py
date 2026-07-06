@@ -23,7 +23,8 @@ NEGATIONS = {
 def preprocess_text(text):
     text = text.lower()
     text = re.sub(r"[^a-zA-Z'\s]", "", text)
-    return text.split()
+    text_split = text.split()
+    return text_split
 
 def tokenize(sentence):
     tokens = preprocess_text(sentence)
