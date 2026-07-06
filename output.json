@@ -1,0 +1,5649 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you move left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you move left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you head behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario move left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you head back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey head left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario would you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "could you go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "can you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario would you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo walk backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you go left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you go behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario walk back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey can you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo could you walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you head behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario go back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo would you walk backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario can you move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "go back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you go behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario can you go backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "would you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you move backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario go backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey head back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you walk back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario could you head left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you walk left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey could you move back please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you move backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario move left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you move back"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "walk behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario could you head backwards please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you walk behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo mario move left"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario could you walk left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "yo can you go left please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "mario can you move behind"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey head backwards"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey would you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_left",
+        "text": "hey mario would you move behind please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario would you go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario could you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you walk right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario could you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you head ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you go ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario would you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you move forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo go forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you head forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you walk forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario would you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you go ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "head forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario go right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey could you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey move right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey would you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario move forward please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "would you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "could you move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo can you walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you walk ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario walk right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo would you move right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario can you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "mario move ahead"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "can you head right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you head ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey can you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo could you go forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you go right please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario can you head right"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "walk forward"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "yo mario could you move ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "move_right",
+        "text": "hey mario can you walk ahead please"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey can you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "can you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario can you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario would you leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario could you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey would you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "jump"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo would you jump there"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey mario leap there ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario can you leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "mario could you jump across"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "yo mario leap over ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "hey leap across ?0.05"
+      },
+      {
+        "entities": [],
+        "intent": "jump",
+        "text": "could you jump over"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario can you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo can you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario can you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo could you sprint"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "can you sprint please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you run"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario can you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "mario could you go faster"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey mario could you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "hey would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo mario would you run please"
+      },
+      {
+        "entities": [],
+        "intent": "run",
+        "text": "yo would you go faster please"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo would you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "would you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey would you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "could you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey would you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario can you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario can you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario would you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario can you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "mario could you duck"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo could you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "hey mario can you go in the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo could you go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "can you crouch"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "yo mario go down"
+      },
+      {
+        "entities": [],
+        "intent": "down",
+        "text": "could you go down the pipe ?0.1"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario would you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo can you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario could you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario would you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario would you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "would you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo can you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "can you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo would you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "mario could you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey could you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "would you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey could you throw a pellet"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario would you use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "yo mario shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "would you shoot"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario use fireball"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey can you fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey mario fire"
+      },
+      {
+        "entities": [],
+        "intent": "fire",
+        "text": "hey would you use fireball"
+      }
+    ],
+    "entity_synonyms": [],
+    "lookup_tables": [],
+    "regex_features": []
+  }
+}
