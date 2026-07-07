@@ -1,3 +1,9 @@
+Our NLP model, a Seq2Seq architecture known as MacSeq, parses the intent from the text transcribed live by OpenAI Whisper,
+allowing for our model to understand the user and map their speech to certain sequence of actions/commands,
+such as controlling Mario in a Mario Bros emulator. Our main innovation is in creating a separate execution memory layer on top of the model,
+allowing for the resolution of an issue that comes with OpenAI’s Whisper in the edge cases where commands are corrected once a recording window has ended.
+
+### Pipeline:
 STT --> Tokenizer --> Vectorizer/positional embeddings --> Seq2Seq model --> memory layer innovation --> vector of macro commands --> mapped to mario controls in emulator
 
 ### Done:
