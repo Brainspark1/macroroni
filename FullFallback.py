@@ -60,10 +60,10 @@ def predict(text):
     processed_text = preprocess_text(text)
     x = vectorizer.transform([processed_text])
 
-    probs = model.predict_proba(x)[0]
+    probs = best_model.predict_proba(x)[0]
     best_idx = probs.argmax()
 
-    label = model.classes_[best_idx]
+    label = best_model.classes_[best_idx]
     confidence = probs[best_idx]
 
     return label, confidence
@@ -172,7 +172,7 @@ while True:
     cv2.imshow("Mario", cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
 
     # stopping listening if q is pressed
-    if (cv2.waitKey(1)) and (0xFF == ord("q")):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
     if terminated or truncated:
         obs, info = env.reset()
