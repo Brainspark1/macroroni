@@ -36,7 +36,7 @@ whisper_model = WhisperModel(
 
 def preprocess_text(text):
     text = text.lower()
-    text = re.sub(r"[^a-z'\s]", "", text)
+    text = re.sub(r"[^a-z'\s]", "", text) # updating to include apostrophes in the case of contraction words like "don't"
     return text.split()
 
 df = pd.read_csv("actual_dataset.csv")
@@ -92,29 +92,49 @@ obs,info = env.reset()
 cv2.namedWindow("Mario", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("Mario", 1600, 800)
 
-mario_action = 0
-action_end_time = 0.0
-lock = threading.Lock() # prevents two parts of code from changing same variable/action at same time
+# currently held buttons
+current_direction = None # could be left, right or nothing
+running = False # is running or not
 
-# custom method to set hyperparameter durations on actions
-def set_action(action, duration):
-    global mario_action, action_end_time
+# temporary actions
+jump_until = 0
+duck_until = 0
+fire_until = 0
+
+lock = threading.Lock()
+
+# method to update the state of what mario should be doing
+def update_state(intent):
+    global current_direction
+    global running
+    global jump_until
+    global duck_until
+    global fire_until
 
     with lock:
-        mario_action = action
-        action_end_time = time.time() + duration
+        now_moment = time.time()
 
-# holds currently grasped intents
-intent_map = {
-    "MOVE_LEFT": COMPLEX_MOVEMENT.index(["left"]),
-    "MOVE_RIGHT": COMPLEX_MOVEMENT.index(["right"]),
-    "JUMP": COMPLEX_MOVEMENT.index(["A"]),
-    "DUCK": COMPLEX_MOVEMENT.index(["down"]),
-    "LEFT_JUMP": COMPLEX_MOVEMENT.index(["left", "A"]),
-    "RIGHT_JUMP": COMPLEX_MOVEMENT.index(["right", "A"]),
-    "STOP": 0,
-    "PAUSE": 0
-}
+        if intent == "MOVE_LEFT":
+            current_direction = "left"
+
+        elif intent == "MOVE_RIGHT":
+            current_direction = "right"
+
+        elif intent == "RUN":
+            running = True
+
+        elif intent == "JUMP":
+            jump_until = now_moment + 0.25
+
+        elif intent == "DUCK":
+            duck_until = now_moment + 1.5
+
+        elif intent == "FIRE":
+            fire_until = now_moment + 0.2
+
+        elif intent == "STOP":
+            current_direction = None
+            running = False
 
 recognizer = sr.Recognizer()
 mic = sr.Microphone(sample_rate=16000)
@@ -127,6 +147,7 @@ def audio_callback(recognizer, audio):
     global mario_action
 
     try:
+        # more robust way to create temporary files
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
             f.write(audio.get_wav_data())
             filename = f.name
@@ -134,7 +155,7 @@ def audio_callback(recognizer, audio):
         try:
             segments, info = whisper_model.transcribe(
                 filename,
-                beam_size=1,
+                beam_size=1, # number of words in transcription model is looking out for
                 vad_filter=True,
                 condition_on_previous_text=False,
             )
@@ -145,7 +166,7 @@ def audio_callback(recognizer, audio):
         transcribed_text = " ".join(segment.text for segment in segments).strip()
 
         if not transcribed_text:
-            print("Nothing transcribed.") # if nothing in transcribed text, do nothing
+            print("\nNothing transcribed.") # if nothing in transcribed text, do nothing
             return
         
         intent, confidence = predict(transcribed_text)
@@ -154,28 +175,7 @@ def audio_callback(recognizer, audio):
 
         # if more than 60% confidence of command
         if confidence > 0.6:
-            action = intent_map.get(intent, 0)
-
-            if intent in ["LEFT_JUMP", "RIGHT_JUMP"]:
-                set_action(action, 0.35)
-
-            elif intent == "JUMP":
-                set_action(action, 0.25)
-
-            elif intent == "RUN":
-                set_action(action, 1.0)
-
-            elif intent in ["MOVE_LEFT", "MOVE_RIGHT"]:
-                set_action(action, 1.0)
-
-            elif intent == "DUCK":
-                set_action(action, 1.5)
-
-            elif intent == "FIRE":
-                set_action(action, 0.2)
-
-            else:
-                set_action(action, 0.5)
+            update_state(intent)
 
     except Exception as e:
         print(e)
@@ -184,20 +184,53 @@ recognizer.listen_in_background(mic, audio_callback, phrase_time_limit=2)
 
 print("Press q to end voice control.")
 
-while True:
-    with lock:
-        if time.time() >= action_end_time:
-            mario_action = 0
+# method to get what buttons should be pressed by adding them to a list based on states of global action variables
+def get_current_action():
+    buttons = []
 
-        action = mario_action
-    
-    # from Joshua's mario.py
+    with lock:
+        now = time.time()
+
+        if current_direction == "left":
+            buttons.append("left")
+
+        elif current_direction == "right":
+            buttons.append("right")
+
+        if running:
+            buttons.append("B")
+
+        # if haven't finished jumping, press jump button
+        if now < jump_until:
+            buttons.append("A")
+
+        # if haven't finished ducking, press duck button
+        if now < duck_until:
+            buttons.append("down")
+
+        # if haven't finished throwing fireball, press fire button
+        if now < fire_until:
+            buttons.append("A")
+
+    # if no more buttons left to press ...
+    if len(buttons) == 0:
+        buttons = ["NOOP"] # default to doing nothing
+
+    # return mapping those buttons to mario's movement
+    return COMPLEX_MOVEMENT.index(buttons)
+
+# gameplay loop taken from Joshua's file
+while True:
+    action = get_current_action()
+
     obs, reward, terminated, truncated, info = env.step(action)
+
     cv2.imshow("Mario", cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
 
-    # stopping listening if q is pressed
+    # exit if q is pressed
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
+
     if terminated or truncated:
         obs, info = env.reset()
 
