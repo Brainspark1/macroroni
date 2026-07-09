@@ -29,7 +29,7 @@ compute_type = (
 )
 
 whisper_model = WhisperModel(
-    "tiny",
+    "tiny.en",
     device=device,
     compute_type=compute_type
 )
@@ -170,7 +170,7 @@ def audio_callback(recognizer, audio):
             audio_np,
             beam_size=1,
             best_of=1,
-            vad_filter=True,
+            vad_filter=False,
             condition_on_previous_text=False,
             without_timestamps=True
         )
@@ -194,7 +194,7 @@ def audio_callback(recognizer, audio):
     except Exception as e:
         print(e)
 
-recognizer.listen_in_background(mic, audio_callback, phrase_time_limit=1)
+recognizer.listen_in_background(mic, audio_callback, phrase_time_limit=0.7)
 
 print("Press q to end voice control.")
 
