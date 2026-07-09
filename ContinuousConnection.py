@@ -1,8 +1,8 @@
-import os
 import re
 import threading
-import tempfile
 import time
+import wave
+import io
 
 import cv2
 import gymnasium as gym
@@ -29,7 +29,7 @@ compute_type = (
 )
 
 whisper_model = WhisperModel(
-    "base",
+    "tiny",
     device=device,
     compute_type=compute_type
 )
@@ -136,33 +136,45 @@ def update_state(intent):
             current_direction = None
             running = False
 
+# replacing saving audio as separate temp file instead to a numpy array that can be processed more directly
+def audio_to_numpy(audio):
+    wav_data = audio.get_wav_data()
+
+    with wave.open(io.BytesIO(wav_data), "rb") as wav_file:
+        frames = wav_file.readframes(wav_file.getnframes())
+
+        audio_np = np.frombuffer(
+            frames,
+            dtype=np.int16
+        ).astype(np.float32)
+
+        # normalizing into an int16 range
+        audio_np = audio_np / 32768.0
+
+    return audio_np
+
 recognizer = sr.Recognizer()
 mic = sr.Microphone(sample_rate=16000)
 
 with mic as source:
     print("Calibrating microphone...")
-    recognizer.adjust_for_ambient_noise(source, duration=5) # can be tuned for best results
+    recognizer.adjust_for_ambient_noise(source, duration=1) # can be tuned for best results
 
 def audio_callback(recognizer, audio):
-    global mario_action
-
     try:
-        # more robust way to create temporary files
-        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
-            f.write(audio.get_wav_data())
-            filename = f.name
+        start_time = time.time()
 
-        try:
-            segments, info = whisper_model.transcribe(
-                filename,
-                beam_size=1, # number of words in transcription model is looking out for
-                vad_filter=True,
-                condition_on_previous_text=False,
-            )
-        finally:
-            if os.path.exists(filename):
-                os.remove(filename)
-        
+        audio_np = audio_to_numpy(audio)
+
+        segments, info = whisper_model.transcribe(
+            audio_np,
+            beam_size=1,
+            best_of=1,
+            vad_filter=True,
+            condition_on_previous_text=False,
+            without_timestamps=True
+        )
+
         transcribed_text = " ".join(segment.text for segment in segments).strip()
 
         if not transcribed_text:
@@ -177,10 +189,12 @@ def audio_callback(recognizer, audio):
         if confidence > 0.6:
             update_state(intent)
 
+        print("Latency:", time.time() - start_time)
+
     except Exception as e:
         print(e)
 
-recognizer.listen_in_background(mic, audio_callback, phrase_time_limit=2)
+recognizer.listen_in_background(mic, audio_callback, phrase_time_limit=1)
 
 print("Press q to end voice control.")
 
