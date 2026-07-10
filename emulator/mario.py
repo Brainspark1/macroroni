@@ -16,67 +16,105 @@ obs, info = env.reset()
 window_name = 'Super Mario Bros'  # For Display Size
 cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
-cv2.resizeWindow(window_name, 1600, 800)
+cv2.resizeWindow(window_name, 1920, 1080)
 
-mario_action = 0       # temporary Key controls 
+# control additions to fix jumping and running 
+mario_action = 0        
+move_left = False
+move_right = False
+running = False
 jumping = False        # better adjustment for jumping height 
 jump_start = 0 
 
 def on_press(key):
-    global mario_action, jumping, jump_start
+    global move_left, move_right, running, jumping, jump_start, mario_action
     try:
-        if key.char == 'a' or key.char == 'A':
-            mario_action = COMPLEX_MOVEMENT.index(['left'])
-        elif key.char == 'd' or key.char == 'D':
-            mario_action = COMPLEX_MOVEMENT.index(['right'])
-        elif key.char == 's' or key.char == 'S':
+        if key.char.lower() == 'a':
+            move_left = True
+        elif key.char.lower() == 'd':
+            move_right = True
+        elif key.char.lower() == 'z':
+            running = True
+        elif key.char.lower() == 's':
             mario_action = COMPLEX_MOVEMENT.index(['down'])
-        elif key.char == 'z' or key.char == 'Z':
-            mario_action = COMPLEX_MOVEMENT.index(['B'])
     except:
         pass
 
-    if key == keyboard.Key.space:
-        if not jumping:
-            jumping = True
-            jump_start = time.time()
-            mario_action = COMPLEX_MOVEMENT.index(['A'])
+    if key == keyboard.Key.space and not jumping:
+        jumping = True
+        jump_start = time.time()
+            
             
 
-def key_release(key):
-    global mario_action, jumping
-    if key == keyboard.Key.esc:
-        return False
+def on_release(key):
+    global move_left, move_right, running, jumping, mario_action
+    try:
+        if key.char.lower() == 'a':
+            move_left = False
+        elif key.char.lower() == 'd':
+            move_right = False
+        elif key.char.lower() == 'z':
+            running = False
+        elif key.char.lower() == 's':
+            mario_action = 0
+    except:
+        pass
     if key == keyboard.Key.space:
         jumping = False
-    if hasattr(key, 'char') and key.char in ['a', 'A', 'd', 'D']:
-        mario_action = 0
 
-listener = keyboard.Listener(on_press=on_press, on_release=key_release)
+listener = keyboard.Listener(on_press=on_press, on_release=on_release)
 listener.daemon = True
 listener.start()
 
 while True:
-    key = cv2.waitKey(1) & 0xFF
-    action = mario_action
-
-    # this lets you hold space to jump higher but its not really smooth
-    if jumping and (time.time() - jump_start) < 0.8:  #jump duration
-        action = COMPLEX_MOVEMENT.index(['A'])
-
-    if key == ord('q'):
+    key_cv2 = cv2.waitKey(1) & 0xFF
+    if key_cv2 == ord('q'):
         break
-    elif key == ord(' '):
-        action = COMPLEX_MOVEMENT.index(['A'])
+    
+    # helps mario's movement while jumping
+    if move_right and move_left:
+        mario_action = COMPLEX_MOVEMENT.index(['NOOP'])
+    elif move_right:
+        if running:
+            mario_action = COMPLEX_MOVEMENT.index(['right', 'B'])
+        else:
+            mario_action = COMPLEX_MOVEMENT.index(['right'])
+    elif move_left:
+        if running:
+            mario_action = COMPLEX_MOVEMENT.index(['left', 'B'])
+        else:
+            mario_action = COMPLEX_MOVEMENT.index(['left'])
+    else:
+        mario_action = COMPLEX_MOVEMENT.index(['NOOP'])
 
-    movement = COMPLEX_MOVEMENT[action]
-    print(f"Action: {action} | Movement: {movement}", end="\r")
+    # jump height adjustment
+    if jumping and (time.time() - jump_start) < 0.8:
+        if mario_action == COMPLEX_MOVEMENT.index(['NOOP']):
+            mario_action = COMPLEX_MOVEMENT.index(['A'])
+        else:
+            try:
+                base = ['right'] if move_right else ['left']
+                if running:
+                    base.append('B')
+                base.append('A')
+                mario_action = COMPLEX_MOVEMENT.index(base)
+            except ValueError:
+                mario_action = COMPLEX_MOVEMENT.index(['A'])
 
-    obs, reward, terminated, truncated, info = env.step(action)
+    movement = COMPLEX_MOVEMENT[mario_action]
+
+    obs, reward, terminated, truncated, info = env.step(mario_action)
     done = terminated or truncated
 
     cv2.imshow(window_name, cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
+
+    # resets the game when you die a certain amount of times
     if done:
         obs, info = env.reset()
+        move_left = False
+        move_right = False
+        running = False
+        jumping = False
+
 env.close()
 cv2.destroyAllWindows()
