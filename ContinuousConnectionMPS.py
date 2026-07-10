@@ -154,7 +154,8 @@ def audio_callback(recognizer, audio):
         result = mlx_whisper.transcribe(
             audio_np,
             path_or_hf_repo="mlx-community/whisper-tiny.en-mlx",
-            language="en"
+            language="en",
+            initial_prompt="The speaker is giving instructions. Look out for the command word 'jump'."
         )
 
         transcribed_text = result["text"].strip()
@@ -163,12 +164,19 @@ def audio_callback(recognizer, audio):
             print("\nNothing transcribed.") # if nothing in transcribed text, do nothing
             return
         
+        words = transcribed_text.split()
+
+        # if more than 15 words of only one type, ignore
+        if len(words) > 15 and len(set(words)) == 1:
+            print("Ignoring unusually long repeated transcript.")
+            return
+                
         intent, confidence = predict(transcribed_text)
         print(f"\nTranscript: {transcribed_text}")
         print(f"Intent: {intent} ({confidence:.2f})")
 
-        # if more than 60% confidence of command
-        if confidence > 0.6:
+        # if more than 50% confidence of command
+        if confidence > 0.5:
             update_state(intent)
 
         print("Latency:", time.time() - start_time)
