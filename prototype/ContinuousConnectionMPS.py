@@ -141,6 +141,25 @@ def audio_to_numpy(audio):
 recognizer = sr.Recognizer()
 mic = sr.Microphone(sample_rate=16000)
 
+def correct_transcription(text):
+    text = text.lower()
+
+    replacements = {
+        "dump": "jump",
+        "jum": "jump",
+        "jumps": "jump",
+        "jumping": "jump",
+        "chump": "jump",
+        "jumpp": "jump",
+        "John": "jump"
+    }
+
+    for wrong, correct in replacements.items():
+        if wrong in text:
+            text = text.replace(wrong, correct)
+
+    return text
+
 with mic as source:
     print("Calibrating microphone...")
     recognizer.adjust_for_ambient_noise(source, duration=1) # can be tuned for best results
@@ -154,21 +173,36 @@ def audio_callback(recognizer, audio):
         result = mlx_whisper.transcribe(
             audio_np,
             path_or_hf_repo="mlx-community/whisper-tiny.en-mlx",
-            language="en"
+            language="en",
+            initial_prompt=(
+                "This is a Mario voice controller. "
+                "Commands are: jump, run, left, right, duck, fire, stop, pause. "
+                "The player frequently says jump."
+            )
         )
 
-        transcribed_text = result["text"].strip()
+        transcribed_text = correct_transcription(result["text"].strip())
 
         if not transcribed_text:
             print("\nNothing transcribed.") # if nothing in transcribed text, do nothing
             return
         
+        words = transcribed_text.split()
+
+        # if more than 15 words of only one type, ignore
+        if len(words) > 15 and len(set(words)) == 1:
+            print("Ignoring unusually long repeated transcript.")
+            return
+        elif len(words) > 15:
+            print ("Ignoring unusually long transcript.")
+            return
+                
         intent, confidence = predict(transcribed_text)
         print(f"\nTranscript: {transcribed_text}")
         print(f"Intent: {intent} ({confidence:.2f})")
 
-        # if more than 60% confidence of command
-        if confidence > 0.6:
+        # if more than 50% confidence of command
+        if confidence > 0.5:
             update_state(intent)
 
         print("Latency:", time.time() - start_time)
