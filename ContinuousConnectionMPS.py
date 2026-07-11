@@ -141,6 +141,25 @@ def audio_to_numpy(audio):
 recognizer = sr.Recognizer()
 mic = sr.Microphone(sample_rate=16000)
 
+def correct_transcription(text):
+    text = text.lower()
+
+    replacements = {
+        "dump": "jump",
+        "jum": "jump",
+        "jumps": "jump",
+        "jumping": "jump",
+        "chump": "jump",
+        "jumpp": "jump",
+        "John": "jump"
+    }
+
+    for wrong, correct in replacements.items():
+        if wrong in text:
+            text = text.replace(wrong, correct)
+
+    return text
+
 with mic as source:
     print("Calibrating microphone...")
     recognizer.adjust_for_ambient_noise(source, duration=1) # can be tuned for best results
@@ -155,10 +174,14 @@ def audio_callback(recognizer, audio):
             audio_np,
             path_or_hf_repo="mlx-community/whisper-tiny.en-mlx",
             language="en",
-            initial_prompt="The speaker is giving instructions. Look out for the command word 'jump'."
+            initial_prompt=(
+                "This is a Mario voice controller. "
+                "Commands are: jump, run, left, right, duck, fire, stop, pause. "
+                "The player frequently says jump."
+            )
         )
 
-        transcribed_text = result["text"].strip()
+        transcribed_text = correct_transcription(result["text"].strip())
 
         if not transcribed_text:
             print("\nNothing transcribed.") # if nothing in transcribed text, do nothing
@@ -169,6 +192,9 @@ def audio_callback(recognizer, audio):
         # if more than 15 words of only one type, ignore
         if len(words) > 15 and len(set(words)) == 1:
             print("Ignoring unusually long repeated transcript.")
+            return
+        elif len(words) > 15:
+            print ("Ignoring unusually long transcript.")
             return
                 
         intent, confidence = predict(transcribed_text)
