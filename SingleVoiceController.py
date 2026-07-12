@@ -14,7 +14,7 @@ from nes_py.wrappers import JoypadSpace
 import cv2
 import gymnasium as gym
 
-class BaseVoiceController:
+class SingleVoiceController:
     def __init__(self, dataset_path, device_backend="mps", model_size="tiny.en", initial_prompt=None):
         self.lock = threading.Lock()
         self.device_backend = device_backend.lower()
