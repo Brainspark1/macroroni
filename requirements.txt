@@ -10,3 +10,6 @@ speechrecognition
 mlx-whisper
 
 torch
+transformers
+evaluate
+datasets
