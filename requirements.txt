@@ -13,3 +13,4 @@ torch
 transformers
 evaluate
 datasets
+seqeval-1.2.2
