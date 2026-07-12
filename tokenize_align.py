@@ -1,0 +1,50 @@
+import json
+from transformers import AutoTokenizer
+from datasets import Dataset
+
+with open("token_classification_data.json") as f:
+    payload = json.load(f)
+
+label_list = payload["label_list"]
+examples = payload["data"]
+
+ds = Dataset.from_list([
+    {"tokens": ex["tokens"], "ner_tags": ex["ner_tags"]}
+    for ex in examples
+]) 
+ 
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+ 
+ 
+def tokenize_and_align_labels(batch):
+    tokenized_inputs = tokenizer(
+        batch["tokens"], truncation=True, is_split_into_words=True
+    )
+    all_labels = []
+    for i, label in enumerate(batch["ner_tags"]):
+        word_ids = tokenized_inputs.word_ids(batch_index=i)
+        previous_word_idx = None
+        label_ids = []
+        for word_idx in word_ids:
+            if word_idx is None:
+                label_ids.append(-100)                 
+            elif word_idx != previous_word_idx:
+                label_ids.append(label[word_idx])       
+                label_ids.append(-100)                  
+            previous_word_idx = word_idx
+        all_labels.append(label_ids)
+    tokenized_inputs["labels"] = all_labels
+    return tokenized_inputs
+ 
+ 
+tokenized_ds = ds.map(tokenize_and_align_labels, batched=True)
+ 
+example = tokenized_ds[0]
+tokens = tokenizer.convert_ids_to_tokens(example["input_ids"])
+print("Subword tokens:", tokens)
+print("Aligned labels:", example["labels"])
+print("(-100 = ignored by loss; everything else is an index into label_list)")
+print("label_list:", label_list)
+ 
+tokenized_ds.save_to_disk("mario_token_classification_tokenized")
+print("\nSaved tokenized dataset to ./mario_token_classification_tokenized")
