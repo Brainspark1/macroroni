@@ -29,8 +29,7 @@ def tokenize_and_align_labels(batch):
             if word_idx is None:
                 label_ids.append(-100)                 
             elif word_idx != previous_word_idx:
-                label_ids.append(label[word_idx])       
-                label_ids.append(-100)                  
+                label_ids.append(label[word_idx])                        
             previous_word_idx = word_idx
         all_labels.append(label_ids)
     tokenized_inputs["labels"] = all_labels
