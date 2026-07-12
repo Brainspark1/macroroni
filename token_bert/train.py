@@ -49,3 +49,4 @@ trainer = Trainer(
 )
 trainer.train()
 trainer.save_model("./token_classifier")
+trainer.push_to_hub()
