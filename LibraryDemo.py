@@ -1,4 +1,4 @@
-from macroroni import BaseVoiceController
+from macroroni import SingleVoiceController
 
 import time
 from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
@@ -6,7 +6,7 @@ from nes_py.wrappers import JoypadSpace
 import cv2
 import gymnasium as gym
 
-class MarioVoiceController(BaseVoiceController):
+class MarioVoiceController(SingleVoiceController):
     def __init__(self, dataset_path, device_backend="mps"):
 
         prompt = "Mario alternative commands: jump, right, left, duck, stop."
