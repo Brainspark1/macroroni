@@ -1,0 +1,29 @@
+{
+    "characters": {
+      "mario": ["0x006D", "0x00CE", "0x0014"]
+    },
+
+    "targets": {
+      "goomba": "0x06",
+      "red_koopa": "0x01",
+      "buzzy_beetle": "0x02",
+      "red_koopa_paratroopa": "0x03",
+      "green_koopa_paratroopa": "0x04",
+      "pihrana_plant": "0x0D",
+      "green_koopa": "0x00",
+      "hammer_bro": "0x09",
+      "lakitu": "0x0E",
+      "spiny": "0x0F",
+      "bowser": "0x2D",
+      "mushroom_powerup": "0x2C",
+      "fire_flower_powerup": "0x2E",
+      "star_powerup": "0x2F",
+      "one_up_powerup": "0x30",
+      "coin": "0x0030/2"
+    },
+
+    "items": {
+
+    }
+  }
+  
