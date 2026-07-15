@@ -4,7 +4,7 @@ data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
 from transformers import AutoModelForTokenClassification, TrainingArguments, Trainer
 from datasets import load_from_disk
 from sklearn.model_selection import train_test_split
-from compute_metrics import compute_metrics
+from deprecated.token_bert.compute_metrics import compute_metrics
 
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
@@ -49,3 +49,4 @@ trainer = Trainer(
 )
 trainer.train()
 trainer.save_model("./token_classifier")
+trainer.push_to_hub()

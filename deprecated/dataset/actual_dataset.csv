@@ -1,0 +1,183 @@
+0,1
+go left,MOVE_LEFT
+move left,MOVE_LEFT
+left,MOVE_LEFT
+back left,MOVE_LEFT
+walk left,MOVE_LEFT
+backward,MOVE_LEFT
+turn left,MOVE_LEFT
+strafe left,MOVE_LEFT
+step left,MOVE_LEFT
+retreat left,MOVE_LEFT
+move to the left,MOVE_LEFT
+go sideways left,MOVE_LEFT
+step to the left,MOVE_LEFT
+shift left,MOVE_LEFT
+move to the left,MOVE_LEFT
+go sideways left,MOVE_LEFT
+step to the left,MOVE_LEFT
+shift left,MOVE_LEFT
+move to the left,MOVE_LEFT
+go sideways left,MOVE_LEFT
+step to the left,MOVE_LEFT
+shift left,MOVE_LEFT
+go right,MOVE_RIGHT
+move right,MOVE_RIGHT
+right,MOVE_RIGHT
+forward,MOVE_RIGHT
+move ahead,MOVE_RIGHT
+turn right,MOVE_RIGHT
+strafe right,MOVE_RIGHT
+step right,MOVE_RIGHT
+advance right,MOVE_RIGHT
+move to the right,MOVE_RIGHT
+go sideways right,MOVE_RIGHT
+step to the right,MOVE_RIGHT
+shift right,MOVE_RIGHT
+move to the right,MOVE_RIGHT
+go sideways right,MOVE_RIGHT
+step to the right,MOVE_RIGHT
+shift right,MOVE_RIGHT
+move to the right,MOVE_RIGHT
+go sideways right,MOVE_RIGHT
+step to the right,MOVE_RIGHT
+shift right,MOVE_RIGHT
+jump,JUMP
+hop,JUMP
+leap,JUMP
+up,JUMP
+jump now,JUMP
+bounce,JUMP
+leap high,JUMP
+spring up,JUMP
+elevate,JUMP
+jump over,JUMP
+spring,JUMP
+elevate up,JUMP
+pounce,JUMP
+jump over,JUMP
+spring,JUMP
+elevate up,JUMP
+pounce,JUMP
+jump over,JUMP
+spring,JUMP
+elevate up,JUMP
+pounce,JUMP
+run,RUN
+sprint,RUN
+go fast,RUN
+speed up,RUN
+full speed,RUN
+dash,RUN
+hurry,RUN
+move quickly,RUN
+accelerate,RUN
+run quickly,RUN
+move at speed,RUN
+accelerate fast,RUN
+burst forward,RUN
+run quickly,RUN
+move at speed,RUN
+accelerate fast,RUN
+burst forward,RUN
+run quickly,RUN
+move at speed,RUN
+accelerate fast,RUN
+burst forward,RUN
+duck,DUCK
+crouch,DUCK
+go low,DUCK
+get down,DUCK
+bend down,DUCK
+kneel,DUCK
+bend low,DUCK
+get under cover,DUCK
+hide,DUCK
+duck down,DUCK
+get low,DUCK
+crawl,DUCK
+take cover,DUCK
+duck down,DUCK
+get low,DUCK
+crawl,DUCK
+take cover,DUCK
+duck down,DUCK
+get low,DUCK
+crawl,DUCK
+take cover,DUCK
+fire,FIRE
+shoot,FIRE
+throw fireball,FIRE
+blast,FIRE
+attack,FIRE
+launch missile,FIRE
+attack target,FIRE
+send out a shot,FIRE
+engage,FIRE
+shoot fire,FIRE
+cast spell,FIRE
+hurl projectile,FIRE
+attack now,FIRE
+shoot fire,FIRE
+cast spell,FIRE
+hurl projectile,FIRE
+attack now,FIRE
+shoot fire,FIRE
+cast spell,FIRE
+hurl projectile,FIRE
+attack now,FIRE
+stop,STOP
+freeze,STOP
+hold still,STOP
+don't move,STOP
+stay,STOP
+halt movement,STOP
+cease action,STOP
+stand still,STOP
+pause movement,STOP
+stop movement,STOP
+freeze action,STOP
+cease all activity,STOP
+remain still,STOP
+stop movement,STOP
+freeze action,STOP
+cease all activity,STOP
+remain still,STOP
+stop movement,STOP
+freeze action,STOP
+cease all activity,STOP
+remain still,STOP
+pause,PAUSE
+stop game,PAUSE
+pause game,PAUSE
+take a break,PAUSE
+halt,PAUSE
+break game,PAUSE
+temporarily stop,PAUSE
+hold game,PAUSE
+suspend,PAUSE
+pause the action,PAUSE
+break from game,PAUSE
+temporarily halt,PAUSE
+suspend game,PAUSE
+pause the action,PAUSE
+break from game,PAUSE
+temporarily halt,PAUSE
+suspend game,PAUSE
+pause the action,PAUSE
+break from game,PAUSE
+temporarily halt,PAUSE
+suspend game,PAUSE
+go down,ENTER_PIPE
+enter pipe,ENTER_PIPE
+drop down,ENTER_PIPE
+go inside,ENTER_PIPE
+down pipe,ENTER_PIPE
+go inside pipe,ENTER_PIPE
+descend tube,ENTER_PIPE
+enter drainage,ENTER_PIPE
+drop in pipe,ENTER_PIPE
+go into pipe,ENTER_PIPE
+enter the tube,ENTER_PIPE
+descend into pipe,ENTER_PIPE
+dive into pipe,ENTER_PIPE
