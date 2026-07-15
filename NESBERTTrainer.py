@@ -2,7 +2,7 @@ import os
 import subprocess
 import logging
 
-from transformers import AutoTokenizer, AutoModelForTokenClassification, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForTokenClassification, TrainingArguments, Trainer
 
 logger = logging.getLogger("nes_voice.trainer")
 
@@ -12,7 +12,8 @@ class NESBERTTrainer:
         :param base_model: The starting core weights to fine-tune (defaults to your universal model).
         :param device_backend: hardware backend currently found in user's computer (write either "mps" for MacOS, "cuda" for Nvidia, or "cpu")
         """
-
+        
+        # will change when model is finished
         self.base_model = "Saggarwal/token_bert"
         self.device_backend = device_backend
         
@@ -39,9 +40,9 @@ class NESBERTTrainer:
             logger.error(f"Chatette compilation failed: {e}")
             raise e
 
-    # placeholder method to parse chatette output, tokenize words, returns huggingface dataset object - not implemented yet
+    # TODO - I AM GENUINELY CONFUSED RIGHT NOW ON HOW TO IMPLEMENT THIS METHOD, STILL LOOKING
+    # placeholder method to parse chatette output and return huggingface dataset object - not implemented yet, everything else is though
     def _prepare_hf_dataset(self, generated_dir, tokenizer):
-
         pass
 
     # method to compile chatette template, process data, fine-tune core bert model
@@ -58,7 +59,7 @@ class NESBERTTrainer:
         """
 
         # generating text from chatette file into dataset
-        generated_dir = "./tmp_chatette_out"
+        generated_dir = "./tmp_chatette_output"
         self.compile_chatette_template(chatette_path, output_dir=generated_dir)
         
         # setting up tokenizer and model
@@ -83,9 +84,10 @@ class NESBERTTrainer:
             report_to="none" # getting rid of external trackers to prevent unwanted setups or polluting workspace
         )
         
+        # logging for user to know what is going on
         logger.info("Beginning to fine-tune NESBERT")
         
-        # section commented out as relies on tokenized_dataset that relies on the prepare huggingfacce dataset method that is not yet implemented
+        # section commented out as relies on tokenized_dataset that relies on the prepare huggingface dataset method that is not yet implemented
         # trainer = Trainer(
         #     model=model,
         #     args=training_args,
