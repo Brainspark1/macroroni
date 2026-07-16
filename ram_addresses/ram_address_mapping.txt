@@ -1,0 +1,11 @@
+Mario's state
+0x006D = Mario's absolute map page number (every page = 256 pixels wide, starting from 0)
+0x0086 = Mario's horizontal position inside current page
+0x00CE = Mario's vertical screen position (0 = top of screen, 240 = bottom of screen as increases top down)
+
+Any enemy's state - stored in array of 5 slots with base address + offset value for each slot (offset from 0 to 4)
+0x000F = Enemy's active state (0x00 = dead/empty slot, >0 = active enemy/slot)
+0x0058 = Enemy's horizontal velocity (>128 = left of mario, 0 to 128 = right of mario stored by subtracting byte value from page width to conserve important ram memory instead of storing negative sign)
+0x006E = Enemy's absolute map page number
+0x0087 = Enemy's horizontal position inside current page
+0x00CF = Enemy's vertical screen position
