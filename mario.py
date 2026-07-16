@@ -116,5 +116,7 @@ while True:
         running = False
         jumping = False
 
+
+
 env.close()
 cv2.destroyAllWindows()
