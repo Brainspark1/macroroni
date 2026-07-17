@@ -1,31 +1,35 @@
 import json
  
-SRC = "/mnt/user-data/uploads/output_multilabel.json"
-OUT = "/home/claude/token_classification_data.json"
+SRC = "output.json"
+OUT = "token_classification_data.json"
  
 with open(SRC) as f:
     data = json.load(f)
  
 examples = data["rasa_nlu_data"]["common_examples"]
  
-# Optional heuristic entity tagging, keyed by words that commonly signal
-# a direction or action in this dataset.
-DIRECTION_WORDS = {"left", "right", "backwards", "back", "behind"}
-ACTION_WORDS = {"jump", "run", "fire", "shoot", "down", "duck", "crouch"}
- 
-label_list = ["O", "B-DIRECTION", "I-DIRECTION", "B-ACTION", "I-ACTION"]
+tag2label = {'action':"B-ACTION",'target':"B-TARGET",'correction_connector': "B-CORRECTION"}
+tag2labelcontinue = {'action':"I-ACTION",'target':"I-TARGET",'correction_connector': "I-CORRECTION"}
+label_list = ["O", "B-ACTION", "I-ACTION", "B-TARGET", "I-TARGET","B-CORRECTION","I-CORRECTION"]
 label2id = {l: i for i, l in enumerate(label_list)}
- 
+
 converted = []
 for ex in examples:
-    words = ex["text"].split()
+    entities = ex['entities']
+    sentence = ex['text']
+    words = sentence.split()
     tags = []
+    last_tag = 'None'
     for w in words:
-        lw = w.lower().strip(".,!?")
-        if lw in DIRECTION_WORDS:
-            tags.append("B-DIRECTION")
-        elif lw in ACTION_WORDS:
-            tags.append("B-ACTION")
+        
+        for entity in entities:
+            if w in entity['value']:
+                if entity['entity'] not in last_tag:
+                    last_tag = entity['entity']
+                    tags.append(tag2label[entity['entity']])
+                    break
+                tags.append(tag2labelcontinue[entity['entity']])
+                break
         else:
             tags.append("O")
     converted.append({
