@@ -47,8 +47,8 @@ class AutoEnemyTracking:
         self.starting_score = None
         self.awaiting_kill_confirmation = False
 
-    # protected method to find closest enemy target to get
-    def _pick_target(self, enemy_profiles):
+    # method to find closest enemy target to get
+    def pick_target(self, enemy_profiles):
         # starting point by assuming first enemy in enemy list is the closest to mario
         closest_enemy = enemy_profiles[0]
         # getting amount of time until collision
@@ -119,7 +119,7 @@ class AutoEnemyTracking:
             return COMPLEX_MOVEMENT.index(['NOOP'])
 
         # PIPELINE - picking a target and deciding to kill it or get closer
-        target = self._pick_target(enemy_profiles)
+        target = self.pick_target(enemy_profiles)
         self.target_slot = target["enemy_slot_number"]
         horizontal_distance = target["horizontal_distance"]
         time_to_collision = target["time_to_collision_frames"]
