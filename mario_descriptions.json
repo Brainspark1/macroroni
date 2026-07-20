@@ -1,0 +1,93 @@
+{
+    "characters": {
+      "absolute_page_number": "0x006D",
+      "vertical_screen_position":"0x00CE", 
+      "horizontal_position":"0x0086"
+    },
+
+    "targets": {
+      "goomba": {
+        "address": "0x06",
+        "description": "short Brown guy with white eyes"
+      },
+      "red_koopa": {
+        "address": "0x01",
+        "description": "Yellow turtle with red shell"
+      },
+      "buzzy_beetle": {
+        "address": "0x02",
+        "description": "short yellow guy with blue shell"
+      },
+      "red_koopa_paratroopa": {
+        "address": "0x03",
+        "description": "turtle guy with an red shell and wings"
+      },
+      "green_koopa_paratroopa": {
+        "address": "0x04",
+        "description": "turtle guy with green shell and wings"
+      },
+      "piranha_plant": {
+        "address": "0x0D",
+        "description": "green plant in green pipe"
+      },
+      "green_koopa": {
+        "addresss": "0x00",
+        "description": "turtle guy with green shell"
+      },
+      "hammer_bro": {
+        "address": "0x09",
+        "description": "standing turtle guy with hammer"
+      },
+      "lakitu": {
+        "address": "0x0E",
+        "description": "white cloud with green guy on it"
+      },
+      "spiny": {
+        "address": "0x0F",
+        "description": "red shell with spikes"
+      },
+      "bowser": {
+        "address": "0x2D",
+        "description": "big green turtle guy with spikes on shell"
+      },
+      "mushroom_powerup": {
+        "address": "0x2C",
+        "description": "orange mushroom with red spots"
+      },
+      "fire_flower_powerup": {
+        "address": "0x2E",
+        "description": "blinking flower powerup"
+      },
+      "star_powerup": {
+        "address": "0x2F",
+        "description": "blinking yellow star"
+      },
+      "one_up_powerup": {
+        "address": "0x30",
+        "description": "green mushroom white spots"
+      },
+      "coin": {
+        "address": "0x0030/2",
+        "description": "gold oval"
+      },
+
+      "enemy": {
+        "active_state": "0x000F",
+        "horizontal_velocity": "0x0058",
+        "absolute_map_num": "0x006E",
+        "horizontal_page_position": "0x0087",
+        "enemy_vertical_screen_position": "0x00CF"
+      }
+    },
+
+    "items": {
+      
+    },
+
+    "environment": {
+      "time_hundred": "0x07F8",
+      "time_ten": "0x07F9",
+      "time_one": "0x07FA"
+    }
+  }
+  
