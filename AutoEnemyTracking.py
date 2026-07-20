@@ -1,10 +1,4 @@
-import gymnasium as gym
-from nes_py.wrappers import JoypadSpace
-import gym_super_mario_bros
 from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
-import cv2   # for the manual rendering of the game environment to see it
-from pynput import keyboard    # For better keyboard controls
-import time
 import json
 
 class AutoEnemyTracking:
