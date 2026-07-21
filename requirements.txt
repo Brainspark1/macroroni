@@ -1,0 +1,12 @@
+
+torch
+json
+nes_py
+gym_super_mario_bros
+gymnasium
+opencv_python
+pynput
+time
+threading
+numpy
+scikit-learn

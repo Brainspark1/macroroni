@@ -4,6 +4,7 @@ from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 import cv2   # for the manual rendering of the game environment to see it
 from pynput import keyboard    # For better keyboard controls
 import time
+import threading
 
 from AutoEnemyTracking import AutoEnemyTracking
 
@@ -25,25 +26,64 @@ move_down = False
 running = False
 jumping = False        # better adjustment for jumping height
 jump_start = 0
+awaiting_target_input = False
 
 # initializing auto tracking controller for goombas
 auto_enemy_tracking = AutoEnemyTracking()
 
+# method to handle incoming user transcripts into emulator, connect to whisper
+def handle_transcript(sentence):
+    sentence = sentence.strip().lower() # cleaning up sentence
+
+    # if no transcript, say so
+    if not sentence:
+        print("No transcript, not starting auto tracking.")
+        return
+    
+    if sentence == "any":
+        auto_enemy_tracking.activate()
+        
+        auto_enemy_tracking.target_type_address = None
+        auto_enemy_tracking.target_type_name = None
+        print("Auto tracker enabled, set to any enemy")
+        return
+    
+    name, _ = auto_enemy_tracking.activate_set_target(sentence)
+    
+    if name:
+        print(f"Auto tracking started on {name}")
+    else:
+        print("No recognized target to track.")
+        auto_enemy_tracking.deactivate()
+
+def input_listener():
+    global awaiting_target_input
+
+    print("Input listener is active.")
+
+    while True:
+        if awaiting_target_input:
+            target_input = input("Enter target: ")
+            awaiting_target_input = False
+
+            handle_transcript(target_input)
+        else:
+            time.sleep(0.3)
+
 def on_press(key):
-    global move_left, move_right, move_down, running, jumping, jump_start
+    global move_left, move_right, move_down, running, jumping, jump_start, awaiting_target_input
 
     try:
         if key.char.lower() == 'a':
             move_left = True
         elif key.char.lower() == 'd':
             move_right = True
-        elif key.char.lower() == 'z':
+        elif key.char.lower() == 'f':
             running = True
         elif key.char.lower() == 's':
             move_down = True
         elif key.char.lower() == 'e':
-            # activate auto tracking if e key is pressed
-            auto_enemy_tracking.activate()
+            awaiting_target_input = True
     except AttributeError:
         pass
 
@@ -58,7 +98,7 @@ def on_release(key):
             move_left = False
         elif key.char.lower() == 'd':
             move_right = False
-        elif key.char.lower() == 'z':
+        elif key.char.lower() == 'f':
             running = False
         elif key.char.lower() == 's':
             move_down = False
@@ -66,6 +106,10 @@ def on_release(key):
         pass
     if key == keyboard.Key.space:
         jumping = False
+
+transcript_thread = threading.Thread(target=input_listener)
+transcript_thread.daemon = True
+transcript_thread.start()
 
 listener = keyboard.Listener(on_press=on_press, on_release=on_release)
 listener.daemon = True
