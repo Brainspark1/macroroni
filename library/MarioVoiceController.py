@@ -22,6 +22,9 @@ class MarioVoiceController(NESVoiceController):
 
         self.auto_tracking_class = auto_tracking_class
 
+        self.pass_movement = False
+        self.current_action = None
+
     def process_game_commands(self, entities):
         with self.lock:
             # combining found entities from NESBERT into single sentence
@@ -31,7 +34,33 @@ class MarioVoiceController(NESVoiceController):
                 if entity.get("entity_group") == "TARGET"
             ]
 
-            sentence = " ".join(target_words)
+            action_words = [
+                entity.get("word", "").strip().lower()
+                for entity in entities
+                if entity.get("entity_group") == "ACTION"
+            ]
+
+            if target_words:
+                sentence = " ".join(target_words)
+            else:
+                if action_words:
+                    action_sentence = " ".join(action_words)
+
+                    print(f"Passing action to semantic mapper: {action_sentence}")
+
+                    action_name, score = (
+                        self.auto_tracking_class.set_action_from_similarity(
+                            action_sentence
+                        )
+                    )
+
+                    if action_name:
+                        print(
+                            f"Resolved action: '{action_name}' (confidence: {score:.2f})"
+                        )
+                    else:
+                        print(f"Could not resolve action from: {action_sentence}")
+                    return
 
             if "##" in sentence:
                 sentence = sentence.replace("#", "").replace(" ", "")

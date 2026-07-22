@@ -16,7 +16,7 @@ class AutoEnemyTracking:
     # :param json_path - structure varies based on OS (mac, full path; windows, full path with r in front of string)
     def __init__(
         self,
-        json_path="/Users/nihaalgarud/UTD_nes_voice/connecting_library/macroroni/library/json_file.json",
+        json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json",
         max_x_distance=15,
         max_kill_x=22,
         frames_decide_run=20,
@@ -49,6 +49,8 @@ class AutoEnemyTracking:
         self.semantic_mapper = SemanticMapper(json_path=json_path)
         self.target_type_address = None
         self.target_type_name = None
+        self.action_type_name = None
+        self.passing_action = False
 
         self.max_x_distance = max_x_distance
         self.max_x_kill = max_kill_x
@@ -56,6 +58,17 @@ class AutoEnemyTracking:
         self.mario_approach_speed_fallback = mario_approach_speed_fallback
         self.min_hold_frames = min_hold_frames
         self.max_hold_frames = max_hold_frames
+
+        self.action_hold_frames = 0
+        self.action_hold_durations = {
+            "jump": 8,
+            "run": 20,
+            "move left": 30,
+            "move right": 30,
+            "fireball": 5,
+            "duck": 10,
+            "track": 5,
+        }
 
         (
             self.character_absolute_page_number,
@@ -135,6 +148,8 @@ class AutoEnemyTracking:
         self.awaiting_kill_confirmation = False
         self.target_type_address = None
         self.target_type_name = None
+        self.action_type_name = None
+        self.action_hold_frames = 0
 
     # method to stop auto tracking/set everything to default value
     def deactivate(self):
@@ -148,12 +163,14 @@ class AutoEnemyTracking:
         self.awaiting_kill_confirmation = False
         self.target_type_address = None
         self.target_type_name = None
-
-    # HERE - add method to get target from sentence/return name and confidence score calling find_max_similarity() in sml file
+        self.action_type_name = None
+        self.action_hold_frames = 0
 
     # needs to return name and confidence score
     def set_target_from_similarity(self, transcript_sentence, min_confidence=0.2):
-        name, score = self.semantic_mapper.find_max_similarity(transcript_sentence)
+        name, score = self.semantic_mapper.find_max_target_similarity(
+            transcript_sentence
+        )
 
         if score < min_confidence:
             self.target_type_address = None
@@ -162,11 +179,29 @@ class AutoEnemyTracking:
 
         self.target_type_address = self.target_type_lookup.get(name)
         self.target_type_name = name
+        self.passing_action = False
         return name, score
 
     def activate_set_target(self, transcript_sentence):
         self.activate()
         return self.set_target_from_similarity(transcript_sentence)
+
+    def set_action_from_similarity(self, transcript_sentence, min_confidence=0.2):
+        name, score = self.semantic_mapper.find_max_action_similarity(
+            transcript_sentence
+        )
+
+        if score < min_confidence:
+            self.action_type_name = None
+            return None, score
+
+        self.action_type_name = name
+        self.passing_action = True
+        self.action_hold_frames = self.action_hold_durations.get(
+            name, 10
+        )  # default to holding for 10 frames
+
+        return name, score
 
     # method to find closest enemy target to get
     def pick_target(self, enemy_profiles):
@@ -243,17 +278,21 @@ class AutoEnemyTracking:
             self.deactivate()
             return COMPLEX_MOVEMENT.index(["NOOP"])
 
-        # if the address isnt none get candidate/enemy profile, if no enemies in range do nothing(['NOOP])
+        # if there is an address for a specific enemy type, find the candidates before deciding which one is the closest by calling pick_target()
         if self.target_type_address is not None:
             candidates = [
                 enemy
                 for enemy in enemy_profiles
                 if enemy.get("enemy_type") == self.target_type_address
             ]
+
+            if not candidates:
+                candidates = enemy_profiles
         else:
             candidates = enemy_profiles
 
         if not candidates:
+            self.deactivate()
             return COMPLEX_MOVEMENT.index(["NOOP"])
 
         # PIPELINE - picking a target and deciding to kill it or get closer
@@ -304,9 +343,9 @@ class AutoEnemyTracking:
 
         # keep walking until in killing range if close-by/needs little more time
         if horizontal_distance >= 0:
-            return COMPLEX_MOVEMENT.index(["right"])
+            return COMPLEX_MOVEMENT.index(["right", "B"])
         else:
-            return COMPLEX_MOVEMENT.index(["left"])
+            return COMPLEX_MOVEMENT.index(["left", "B"])
 
     # method to confirm whether or not to kill the goomba
     def confirming_stopping_kill(self, current_score):

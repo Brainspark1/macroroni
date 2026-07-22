@@ -79,6 +79,36 @@
     }
   },
   "items": {},
+  "actions": {
+    "jump": {
+      "description": "jump hop leap bounce spring vault rise up",
+      "button": "A"
+    },
+    "run": {
+      "description": "run sprint dash go fast hurry",
+      "button": "B"
+    },
+    "move left": {
+      "description": "move left or backwards go back retreat",
+      "button": "left"
+    },
+    "move right": {
+      "description": "move right or forward go advance proceed",
+      "button": "right"
+    },
+    "track": {
+      "description": "going to an enemy's location follow chase pursue target",
+      "button": "E"
+    },
+    "fireball": {
+      "description": "shoot a pellet of fire throw fireball",
+      "button": "F"
+    },
+    "duck": {
+      "description": "duck or crouch down or get into a pipe",
+      "button": "S"
+    }
+  },
   "environment": {
     "time_hundred": "0x07F8",
     "time_ten": "0x07F9",
