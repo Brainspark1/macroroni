@@ -25,8 +25,16 @@ class MarioVoiceController(NESVoiceController):
     def process_game_commands(self, entities):
         with self.lock:
             # combining found entities from NESBERT into single sentence
+            target_words = [
+                entity.get("word", "").strip().lower()
+                for entity in entities
+                if entity.get("entity_group") == "TARGET"
+            ]
 
-            sentence = " ".join(e.get("word", "") for e in entities)
+            sentence = " ".join(target_words)
+
+            if "##" in sentence:
+                sentence = sentence.replace("#", "").replace(" ", "")
 
             print(f"DEBUG raw entities: {entities}")
             print(f"DEBUG phrase passed to mapper: '{sentence}'")
