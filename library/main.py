@@ -5,6 +5,7 @@ import cv2  # for the manual rendering of the game environment to see it
 from pynput import keyboard  # For better keyboard controls
 import time
 import threading
+import json
 
 from AutoEnemyTracking import AutoEnemyTracking
 from MarioVoiceController import MarioVoiceController
@@ -30,6 +31,18 @@ running = False
 jumping = False  # better adjustment for jumping height
 jump_start = 0
 awaiting_target_input = False
+
+with open(
+    "/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json",
+    "r",
+) as f:
+    json_data = json.load(f)
+
+# action : list of buttons to be pressed for action to occur
+ACTION_BUTTON_MAP = {}
+for action_name, action_info in json_data["actions"].items():
+    button = action_info.get("button", "").lower()
+    ACTION_BUTTON_MAP[action_name] = button
 
 # initializing auto tracking controller for goombas
 auto_enemy_tracking = AutoEnemyTracking()
@@ -118,8 +131,36 @@ while True:
     if key_cv2 == ord("q"):
         break
 
-    # if auto tracking is active,
-    if auto_enemy_tracking.active:
+    if auto_enemy_tracking.passing_action and auto_enemy_tracking.action_type_name:
+        action_name = auto_enemy_tracking.action_type_name
+        button = ACTION_BUTTON_MAP.get(action_name)
+        if button:
+            try:
+                # Handle both single button and multi-button combos
+                if button == "left":
+                    mario_action = COMPLEX_MOVEMENT.index(["left"])
+                elif button == "right":
+                    mario_action = COMPLEX_MOVEMENT.index(["right"])
+                elif button == "down":
+                    mario_action = COMPLEX_MOVEMENT.index(["down"])
+                elif button == "a":
+                    mario_action = COMPLEX_MOVEMENT.index(["A"])
+                elif button == "b":
+                    mario_action = COMPLEX_MOVEMENT.index(["B"])
+                else:
+                    mario_action = COMPLEX_MOVEMENT.index(["NOOP"])
+            except ValueError:
+                mario_action = COMPLEX_MOVEMENT.index(["NOOP"])
+        else:
+            mario_action = COMPLEX_MOVEMENT.index(["NOOP"])
+
+        action_hold_frames = getattr(auto_enemy_tracking, "action_hold_frames", 0)
+        if action_hold_frames <= 0:
+            auto_enemy_tracking.passing_action = False
+            auto_enemy_tracking.action_type_name = None
+        else:
+            auto_enemy_tracking.action_hold_frames = action_hold_frames - 1
+    elif auto_enemy_tracking.active:
         positions = auto_enemy_tracking.get_game_positions(
             env
         )  # get positions of enemies
@@ -166,7 +207,6 @@ while True:
 
     movement = COMPLEX_MOVEMENT[mario_action]
 
-    # stepping the emulator forward with chosen action
     obs, reward, terminated, truncated, info = env.step(mario_action)
     done = terminated or truncated
 
