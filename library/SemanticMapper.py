@@ -38,5 +38,7 @@ class SemanticMapper:
         max_score = similarity_scores[max_idx]
         max_target_name = target_names[max_idx]
 
+        print(f"DEBUG scores: {list(zip(target_names, similarity_scores))}")
+
         print(f"Name: {max_target_name}, Score: {max_score}")
         return max_target_name, max_score
