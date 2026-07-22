@@ -23,7 +23,7 @@ for ex in examples:
     for w in words:
         
         for entity in entities:
-            if w in entity['value']:
+            if w in entity['value'].split():
                 if entity['entity'] not in last_tag:
                     last_tag = entity['entity']
                     tags.append(tag2label[entity['entity']])
@@ -32,6 +32,7 @@ for ex in examples:
                 break
         else:
             tags.append("O")
+            last_tag = 'None'
     converted.append({
         "tokens": words,
         "ner_tags": [label2id[t] for t in tags],

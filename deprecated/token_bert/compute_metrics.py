@@ -3,10 +3,18 @@ import numpy as np
 
 
 def compute_metrics(p):
-    seqeval = evaluate.load("seqeval")  
+    seqeval = evaluate.load("seqeval")
     predictions, labels = p
     predictions = np.argmax(predictions, axis=2)
-    label_list = ["O", "B-DIRECTION", "I-DIRECTION", "B-ACTION", "I-ACTION"]
+    label_list = [
+        "O",
+        "B-ACTION",
+        "I-ACTION",
+        "B-TARGET",
+        "I-TARGET",
+        "B-CORRECTION",
+        "I-CORRECTION",
+    ]
     true_predictions = [
         [label_list[p] for (p, l) in zip(prediction, label) if l != -100]
         for prediction, label in zip(predictions, labels)

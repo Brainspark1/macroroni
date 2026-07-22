@@ -1,30 +1,45 @@
+import os
+
+for proxy_var in ["HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"]:
+    os.environ.pop(proxy_var, None)
+
 from transformers import DataCollatorForTokenClassification, AutoTokenizer
-tokenizer =  AutoTokenizer.from_pretrained('distilbert/distilbert-base-uncased')
+
+tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
 from transformers import AutoModelForTokenClassification, TrainingArguments, Trainer
 from datasets import load_from_disk
 from sklearn.model_selection import train_test_split
-from deprecated.token_bert.compute_metrics import compute_metrics
+from compute_metrics import compute_metrics
 
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
-ds = load_from_disk('..\dataset\mario_token_classification_tokenized')
+ds = load_from_disk('../dataset/mario_token_classification_tokenized')
 split_ds = ds.train_test_split(test_size=0.2, seed=42)
 label2id = {
     "O": 0,
-    "B-DIRECTION": 1,
-    "I-DIRECTION": 2,
-    "B-ACTION": 3,
-    "I-ACTION": 4
+    "B-ACTION": 1,
+    "I-ACTION": 2,
+    "B-TARGET": 3,
+    "I-TARGET": 4,
+    "B-CORRECTION": 5,
+    "I-CORRECTION": 6,
 }
 id2label = {
     0: "O",
-    1: "B-DIRECTION",
-    2: "I-DIRECTION",
-    3: "B-ACTION",
-    4: "I-ACTION"
+    1: "B-ACTION",
+    2: "I-ACTION",
+    3: "B-TARGET",
+    4: "I-TARGET",
+    5: "B-CORRECTION",
+    6: "I-CORRECTION",
 }
-model = AutoModelForTokenClassification.from_pretrained("distilbert/distilbert-base-uncased", num_labels=13, id2label=id2label, label2id=label2id)
+model = AutoModelForTokenClassification.from_pretrained(
+    "distilbert/distilbert-base-uncased",
+    num_labels=len(label2id),
+    id2label=id2label,
+    label2id=label2id,
+)
 
 training_args = TrainingArguments(
     output_dir="token_bert",

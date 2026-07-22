@@ -5,7 +5,8 @@ import time
 import wave
 
 import cv2
-import gymnasium as gym
+import gym
+import gym_super_mario_bros
 from faster_whisper import WhisperModel
 import numpy as np
 import pandas as pd
@@ -28,7 +29,7 @@ class VoiceControllerCUDA:
         self.duck_until = 0.0
         self.fire_until = 0.0
 
-        # vectorizer training
+        # vecotirzer training
         self.vectorizer = TfidfVectorizer(analyzer=lambda x: x, ngram_range=(1, 3))
         self.best_model = None
         self._train_model(dataset_path)
@@ -218,11 +219,21 @@ class VoiceControllerCUDA:
 
 # main method to be called by user in their own other file
 if __name__ == "__main__":
+    # Importing gym_super_mario_bros registers the standard Super Mario Bros envs.
     controller = VoiceControllerCUDA(dataset_path="actual_dataset.csv")
 
-    env = gym.make("SuperMarioBros-v0", render_mode="rgb_array")
+    env = gym.make(
+        "SuperMarioBros-v0",
+        apply_api_compatibility=True,
+        disable_env_checker=True,
+    )
     env = JoypadSpace(env, COMPLEX_MOVEMENT)
-    obs, info = env.reset()
+    reset_result = env.reset()
+    if isinstance(reset_result, tuple):
+        obs, info = reset_result
+    else:
+        obs = reset_result
+        info = {}
 
     cv2.namedWindow("Mario", cv2.WINDOW_NORMAL)
     cv2.resizeWindow("Mario", 1600, 800)
@@ -235,7 +246,14 @@ if __name__ == "__main__":
         while True:
             action = controller.get_current_action()
 
-            obs, reward, terminated, truncated, info = env.step(action)
+            step_result = env.step(action)
+            if len(step_result) == 5:
+                obs, reward, terminated, truncated, info = step_result
+            elif len(step_result) == 4:
+                obs, reward, done, info = step_result
+                terminated, truncated = done, False
+            else:
+                raise ValueError(f"Unexpected env.step() result length: {len(step_result)}")
 
             cv2.imshow("Mario", cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
 
@@ -244,7 +262,7 @@ if __name__ == "__main__":
                 break
 
             if terminated or truncated:
-                obs, info = env.reset()
+                obs = env.reset()
     finally:
         # closing environment and game/all windows
         env.close()
