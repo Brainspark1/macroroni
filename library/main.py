@@ -37,6 +37,7 @@ voice_controller = MarioVoiceController(
     mapping_json_path="/Users/nihaalgarud/UTD_nes_voice/connecting_library/macroroni/library/json_file.json",
     auto_tracking_class=auto_enemy_tracking,
     device_backend="mps",
+    initial_prompt="Look out for words such as goomba and koopa",
 )
 
 
