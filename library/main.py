@@ -62,6 +62,8 @@ def handle_transcript(sentence):
 
     if name:
         print(f"Auto tracking started on {name}")
+
+        start_time = time.time()
     else:
         print("No recognized target to track.")
         auto_enemy_tracking.deactivate()
@@ -111,7 +113,6 @@ listener.daemon = True
 listener.start()
 
 while True:
-    start_time = time.time()
 
     key_cv2 = cv2.waitKey(1) & 0xFF
     if key_cv2 == ord("q"):
