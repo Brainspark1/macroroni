@@ -1,6 +1,9 @@
 from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 import json
 
+from SemanticMapper import SemanticMapper
+
+
 class AutoEnemyTracking:
     # defining constants
     # MAX_X_DISTANCE = 15  # how far mario should be at most from a goomba before trying to jump on it
@@ -10,21 +13,42 @@ class AutoEnemyTracking:
     # MIN_HOLD_FRAMES = 3 # clamping minimum hold jump frames to prevent mario from doing too short hop
     # MAX_HOLD_FRAMES = 14 # clamping maximum hold jump frames to prevent mario from doing too long leap
 
-    def __init__(self, json_path="/Users/nihaalgarud/auto_track/clone/macroroni/json_file.json", max_x_distance=15, max_kill_x=22, frames_decide_run=20, mario_approach_speed_fallback=2.0, min_hold_frames=3, max_hold_frames=14):
+    # :param json_path - structure varies based on OS (mac, full path; windows, full path with r in front of string)
+    def __init__(
+        self,
+        json_path="/Users/nihaalgarud/UTD_nes_voice/connecting_library/macroroni/library/json_file.json",
+        max_x_distance=15,
+        max_kill_x=22,
+        frames_decide_run=20,
+        mario_approach_speed_fallback=2.0,
+        min_hold_frames=3,
+        max_hold_frames=14,
+    ):
         self.active = False
         self.target_slot = None
         self.jump_direction = None
-        self.recovery_frames_left = 0    
+        self.recovery_frames_left = 0
         self.total_recovery_frames = 0
-        self.jump_hold_frames = 0 
+        self.jump_hold_frames = 0
         self.starting_score = None
         self.awaiting_kill_confirmation = False
-        
+
         self.data = self.read_json_file(json_path)
         self.character_data = self.data["characters"]
         self.enemy_data = self.data["targets"]["enemy"]
         self.item_data = self.data["items"]
         self.env_data = self.data["environment"]
+
+        # getting name to address dictionary for all targets
+        self.target_type_lookup = {
+            name: int(info["address"], 16)
+            for name, info in self.data["targets"].items()
+            if name != "enemy"
+        }
+
+        self.semantic_mapper = SemanticMapper(json_path=json_path)
+        self.target_type_address = None
+        self.target_type_name = None
 
         self.max_x_distance = max_x_distance
         self.max_x_kill = max_kill_x
@@ -33,30 +57,65 @@ class AutoEnemyTracking:
         self.min_hold_frames = min_hold_frames
         self.max_hold_frames = max_hold_frames
 
-        self.character_absolute_page_number, self.character_vertical_screen_position, self.character_horizontal_position = self.initialize_character_variables()
-        self.enemy_active_state, self.enemy_horizontal_velocity, self.enemy_absolute_map_num, self.enemy_horizontal_page_position, self.enemy_vertical_screen_position = self.initialize_enemy_variables()
+        (
+            self.character_absolute_page_number,
+            self.character_vertical_screen_position,
+            self.character_horizontal_position,
+        ) = self.initialize_character_variables()
+        (
+            self.enemy_active_state,
+            self.enemy_type_address,
+            self.enemy_horizontal_velocity,
+            self.enemy_absolute_map_num,
+            self.enemy_horizontal_page_position,
+            self.enemy_vertical_screen_position,
+        ) = self.initialize_enemy_variables()
         self.initialize_item_veriables()
-        self.env_time_hundred, self.env_time_ten, self.env_time_one = self.initialize_environment_variables()
+        self.env_time_hundred, self.env_time_ten, self.env_time_one = (
+            self.initialize_environment_variables()
+        )
 
     def initialize_character_variables(self):
-        character_absolute_page_number = int(self.character_data["absolute_page_number"], 16)
-        character_vertical_screen_position = int(self.character_data["vertical_screen_position"], 16)
-        character_horizontal_position = int(self.character_data["horizontal_position"], 16)
+        character_absolute_page_number = int(
+            self.character_data["absolute_page_number"], 16
+        )
+        character_vertical_screen_position = int(
+            self.character_data["vertical_screen_position"], 16
+        )
+        character_horizontal_position = int(
+            self.character_data["horizontal_position"], 16
+        )
 
-        return character_absolute_page_number, character_vertical_screen_position, character_horizontal_position
+        return (
+            character_absolute_page_number,
+            character_vertical_screen_position,
+            character_horizontal_position,
+        )
 
     def initialize_enemy_variables(self):
         enemy_active_state = int(self.enemy_data["active_state"], 16)
+        enemy_type_address = int(self.enemy_data["enemy_type"], 16)
         enemy_horizontal_velocity = int(self.enemy_data["horizontal_velocity"], 16)
         enemy_absolute_map_num = int(self.enemy_data["absolute_map_num"], 16)
-        enemy_horizontal_page_position = int(self.enemy_data["horizontal_page_position"], 16)
-        enemy_vertical_screen_position = int(self.enemy_data["enemy_vertical_screen_position"], 16)
+        enemy_horizontal_page_position = int(
+            self.enemy_data["horizontal_page_position"], 16
+        )
+        enemy_vertical_screen_position = int(
+            self.enemy_data["enemy_vertical_screen_position"], 16
+        )
 
-        return enemy_active_state, enemy_horizontal_velocity, enemy_absolute_map_num, enemy_horizontal_page_position, enemy_vertical_screen_position
+        return (
+            enemy_active_state,
+            enemy_type_address,
+            enemy_horizontal_velocity,
+            enemy_absolute_map_num,
+            enemy_horizontal_page_position,
+            enemy_vertical_screen_position,
+        )
 
     def initialize_item_veriables(self):
         pass
-        
+
     def initialize_environment_variables(self):
         env_time_hundred = int(self.env_data["time_hundred"], 16)
         env_time_ten = int(self.env_data["time_ten"], 16)
@@ -74,6 +133,8 @@ class AutoEnemyTracking:
         self.jump_hold_frames = 0
         self.starting_score = None
         self.awaiting_kill_confirmation = False
+        self.target_type_address = None
+        self.target_type_name = None
 
     # method to stop auto tracking/set everything to default value
     def deactivate(self):
@@ -85,18 +146,39 @@ class AutoEnemyTracking:
         self.jump_hold_frames = 0
         self.starting_score = None
         self.awaiting_kill_confirmation = False
+        self.target_type_address = None
+        self.target_type_name = None
+
+    # HERE - add method to get target from sentence/return name and confidence score calling find_max_similarity() in sml file
+
+    # needs to return name and confidence score
+    def set_target_from_similarity(self, transcript_sentence, min_confidence=0.2):
+        name, score = self.semantic_mapper.find_max_similarity(transcript_sentence)
+
+        if score < min_confidence:
+            self.target_type_address = None
+            self.target_type_name = None
+            return None, score
+
+        self.target_type_address = self.target_type_lookup.get(name)
+        self.target_type_name = name
+        return name, score
+
+    def activate_set_target(self, transcript_sentence):
+        self.activate()
+        return self.set_target_from_similarity(transcript_sentence)
 
     # method to find closest enemy target to get
     def pick_target(self, enemy_profiles):
         # starting point by assuming first enemy in enemy list is the closest to mario
         closest_enemy = enemy_profiles[0]
         # getting amount of time until collision
-        closest_time = closest_enemy.get("time_to_collision_frames", float('inf'))
+        closest_time = closest_enemy.get("time_to_collision_frames", float("inf"))
 
         # checking every other enemy from index 1 to the end of the list
         for enemy in enemy_profiles[1:]:
             # getting corresponding time to collision
-            enemy_time = enemy.get("time_to_collision_frames", float('inf'))
+            enemy_time = enemy.get("time_to_collision_frames", float("inf"))
 
             # if new enemy time is less than closest found time yet, set enemy and time values accordingly
             if enemy_time < closest_time:
@@ -125,7 +207,9 @@ class AutoEnemyTracking:
         hold_jump_frames = round(time_to_collision / 2)
 
         # produces hold frame value in middle to prevent overshooting or undershooting
-        hold_jump_frames = max(self.min_hold_frames, min(self.max_hold_frames, hold_jump_frames))
+        hold_jump_frames = max(
+            self.min_hold_frames, min(self.max_hold_frames, hold_jump_frames)
+        )
 
         # total frames is just double number of frames to hold jump, since the jump button needs to be held for half of the arc to get to vertex
         total_frames = hold_jump_frames * 2
@@ -145,17 +229,32 @@ class AutoEnemyTracking:
             # if number of frames elapsed since start haven't reached this jump's apex time,
             if frames_elapsed <= self.jump_hold_frames:
                 # keep holding jump button (still on the way up the parabola)
-                return COMPLEX_MOVEMENT.index([self.jump_direction, 'A'])
+                return COMPLEX_MOVEMENT.index([self.jump_direction, "A"])
             else:
                 if self.recovery_frames_left == 0:
-                    self.awaiting_kill_confirmation = True  # if has landed, check if goomba has been killed
+                    self.awaiting_kill_confirmation = (
+                        True  # if has landed, check if goomba has been killed
+                    )
                 # release jump button and let gravity take over for the descending half
                 return COMPLEX_MOVEMENT.index([self.jump_direction])
 
         # if no enemies in sight, deactivate and make mario not do anything
         if not enemy_profiles:
             self.deactivate()
-            return COMPLEX_MOVEMENT.index(['NOOP'])
+            return COMPLEX_MOVEMENT.index(["NOOP"])
+
+        # if the address isnt none get candidate/enemy profile, if no enemies in range do nothing(['NOOP])
+        if self.target_type_address is not None:
+            candidates = [
+                enemy
+                for enemy in enemy_profiles
+                if enemy.get("enemy_type") == self.target_type_address
+            ]
+        else:
+            candidates = enemy_profiles
+
+        if not candidates:
+            return COMPLEX_MOVEMENT.index(["NOOP"])
 
         # PIPELINE - picking a target and deciding to kill it or get closer
         target = self.pick_target(enemy_profiles)
@@ -165,14 +264,15 @@ class AutoEnemyTracking:
 
         # if move right (positive horizontal distance), press right button and run, otherwise left button and run
         if horizontal_distance >= 0:
-            desired_run_action = ['right', 'B']
+            desired_run_action = ["right", "B"]
         else:
-            desired_run_action = ['left', 'B']
+            desired_run_action = ["left", "B"]
 
         # determine to kill goomba if ...
         kill_attempt = (
             # x distance between goomba and mario is in range of set kill distance
-            abs(horizontal_distance) <= self.max_x_kill
+            abs(horizontal_distance)
+            <= self.max_x_kill
         ) or (
             # OR x distance is around two times kill distance (approximation taking into account goomba's velocity) and time to collision is within number of frames to count enemy as target
             abs(horizontal_distance) <= self.max_x_kill * 2
@@ -183,26 +283,30 @@ class AutoEnemyTracking:
         if kill_attempt:
             # locking jump direction to prevent wobbling mid-air in case
             if horizontal_distance >= 0:
-                self.jump_direction = 'right'
+                self.jump_direction = "right"
             else:
-                self.jump_direction = 'left'
+                self.jump_direction = "left"
 
-            self.jump_hold_frames, self.total_recovery_frames = self.calculate_jump_arc(horizontal_distance, target)
+            self.jump_hold_frames, self.total_recovery_frames = self.calculate_jump_arc(
+                horizontal_distance, target
+            )
             self.recovery_frames_left = self.total_recovery_frames
             self.starting_score = current_score
 
             # walking jump for more consistent execution (no run button/B pressed)
-            return COMPLEX_MOVEMENT.index([self.jump_direction, 'A'])
+            return COMPLEX_MOVEMENT.index([self.jump_direction, "A"])
 
         # mario approaching the goomba if still greater distance than max distance between mario and goomba to execute killing action
         if abs(horizontal_distance) > self.max_x_distance:
-            return COMPLEX_MOVEMENT.index(desired_run_action)  # executing sequence of run actions defined above to get to goomba position
+            return COMPLEX_MOVEMENT.index(
+                desired_run_action
+            )  # executing sequence of run actions defined above to get to goomba position
 
         # keep walking until in killing range if close-by/needs little more time
         if horizontal_distance >= 0:
-            return COMPLEX_MOVEMENT.index(['right'])
+            return COMPLEX_MOVEMENT.index(["right"])
         else:
-            return COMPLEX_MOVEMENT.index(['left'])
+            return COMPLEX_MOVEMENT.index(["left"])
 
     # method to confirm whether or not to kill the goomba
     def confirming_stopping_kill(self, current_score):
@@ -245,7 +349,9 @@ class AutoEnemyTracking:
         for i in range(5):
 
             # checking to see if current enemy slot contains a live enemy (note that 00 means empty/dead)
-            enemy_active = ram[self.enemy_active_state + i]  # + i allows active enemies to be checked for in all 5 possible enemy ram slots
+            enemy_active = ram[
+                self.enemy_active_state + i
+            ]  # + i allows active enemies to be checked for in all 5 possible enemy ram slots
 
             # if there is an active enemy
             if enemy_active:
@@ -260,18 +366,16 @@ class AutoEnemyTracking:
                 # enemy y position
                 enemy_y_pos = int(ram[self.enemy_vertical_screen_position + i])
 
+                # enemy type
+                enemy_type = int(ram[self.enemy_type_address + i])
+
                 # adding to currently looped over slot the x and y positions of an enemy if one is there
-                enemy_slots.append({
-                    "slot": i,
-                    "x": enemy_x_pos,
-                    "y": enemy_y_pos
-                })
+                enemy_slots.append(
+                    {"slot": i, "x": enemy_x_pos, "y": enemy_y_pos, "type": enemy_type}
+                )
 
         # returning dictionary containing mario's x and y positions, and the positions of enemies in each slot
-        return {
-            "mario": {"x": mario_x_pos, "y": mario_y_pos},
-            "enemies": enemy_slots
-        }
+        return {"mario": {"x": mario_x_pos, "y": mario_y_pos}, "enemies": enemy_slots}
 
     # method to get the horizontal and vertical distances between mario and enemies
     def get_distances_to_enemies(self, env, positions):
@@ -293,15 +397,19 @@ class AutoEnemyTracking:
             vertical_distance = enemy["y"] - mario_y
 
             # finding distance using pythagorean theorem
-            distance = (horizontal_distance ** 2 + vertical_distance ** 2) ** 0.5
+            distance = (horizontal_distance**2 + vertical_distance**2) ** 0.5
 
-            raw_speed_byte = int(ram[self.enemy_horizontal_velocity + enemy["slot"]])  # cast to a standard python int right away
+            raw_speed_byte = int(
+                ram[self.enemy_horizontal_velocity + enemy["slot"]]
+            )  # cast to a standard python int right away
 
             # determining actual direction of enemy by checking if the memory byte is signed as negative (going left) or as positive (going right)
             # if byte raw value is above 128/represents negative values/moving left in nes ...
             if raw_speed_byte > 128:
                 enemy_direction = "left"
-                enemy_speed = abs(256 - raw_speed_byte)  # representing negative values as difference between actual negative value and 256 (unable to represent negative values without taking up important ram space)
+                enemy_speed = abs(
+                    256 - raw_speed_byte
+                )  # representing negative values as difference between actual negative value and 256 (unable to represent negative values without taking up important ram space)
             # if byte raw value is below 128/represents positive values/moving right in nes ...
             else:
                 enemy_direction = "right"
@@ -326,24 +434,27 @@ class AutoEnemyTracking:
             if is_moving_towards_mario:
                 time_to_collision_frames = abs(horizontal_distance) / enemy_speed
             else:
-                time_to_collision_frames = float('inf')
+                time_to_collision_frames = float("inf")
 
             # appending spatial calculations, distance, and real time collision predictions to output dictionary
-            enemy_metrics.append({
-                "enemy_slot_number": enemy["slot"],
-                "horizontal_distance": horizontal_distance,
-                "vertical_distance": vertical_distance,
-                "distance": round(distance, 2),
-                "speed_per_frame": enemy_speed,
-                "is_coming_towards": is_moving_towards_mario,
-                "time_to_collision_frames": time_to_collision_frames
-            })
+            enemy_metrics.append(
+                {
+                    "enemy_slot_number": enemy["slot"],
+                    "enemy_type": enemy["type"],
+                    "horizontal_distance": horizontal_distance,
+                    "vertical_distance": vertical_distance,
+                    "distance": round(distance, 2),
+                    "speed_per_frame": enemy_speed,
+                    "is_coming_towards": is_moving_towards_mario,
+                    "time_to_collision_frames": time_to_collision_frames,
+                }
+            )
 
         # returning calculated metrics
         return enemy_metrics
-    
+
     def read_json_file(self, json_path):
         with open(json_path, "r") as file:
-            data = json.load(file) 
+            data = json.load(file)
 
         return data
