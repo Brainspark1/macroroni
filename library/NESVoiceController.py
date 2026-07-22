@@ -11,7 +11,7 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification, pipelin
 logger = logging.getLogger("nes_voice")
 
 class NESVoiceController:
-    def __init__(self, mapping_json_path, device_backend="mps", model_size="tiny.en", initial_prompt=None):
+    def __init__(self, mapping_json_path, device_backend="mps", whisper_model_size="tiny.en", initial_prompt=None):
         """        
         :param mapping_json_path: path to the game-specific json file containing character/item/target memory addresses
         :param device_backend: hardware backend currently found in user's computer (write either "mps" for MacOS, "cuda" for Nvidia, or "cpu")
@@ -28,7 +28,7 @@ class NESVoiceController:
         self.load_game_mappings(mapping_json_path)
 
         # initializing transcription and ner pipelines
-        self._init_transcription_engine(model_size)
+        self._init_transcription_engine(whisper_model_size)
         self._init_ner_pipeline("Saggarwal/token_bert") # passing in bert model
         
         # setting up classes to capture audio
