@@ -39,7 +39,7 @@ class NESVoiceController:
 
         # initializing transcription and ner pipelines
         self._init_transcription_engine(whisper_model_size)
-        self._init_ner_pipeline("Saggarwal/token_bert")  # passing in bert model
+        self._init_ner_pipeline("Saggarwal/NESBERT")  # passing in bert model
 
         # setting up classes to capture audio
         self.recognizer = sr.Recognizer()

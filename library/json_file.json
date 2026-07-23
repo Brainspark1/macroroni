@@ -83,74 +83,88 @@
     "jump": {
       "description": "jump hop leap bounce spring vault rise up",
       "button": "A",
-      "mode": "once"
+      "mode": "once",
+      "duration": 8
     },
     "run": {
       "description": "run sprint dash go fast hurry",
       "button": "B",
-      "mode": "once"
+      "mode": "once",
+      "duration": 20
     },
     "move left": {
-      "description": "move left or backwards go back retreat",
+      "description": "move left backwards go left back retreat",
       "button": "left",
-      "mode": "once"
+      "mode": "once",
+      "duration": 30
     },
     "move right": {
-      "description": "move right or forward go advance proceed",
+      "description": "move right forwards go right advance proceed",
       "button": "right",
-      "mode": "once"
+      "mode": "once",
+      "duration": 30
     },
     "track": {
       "description": "going to an enemy's location follow chase pursue target",
       "button": "E",
-      "mode": "once"
+      "mode": "once",
+      "duration": null
     },
     "fireball": {
       "description": "shoot a pellet of fire throw fireball",
       "button": "F",
-      "mode": "once"
+      "mode": "once",
+      "duration": 5
     },
     "duck": {
       "description": "duck or crouch down or get into a pipe",
       "button": "S",
-      "mode": "once"
+      "mode": "once",
+      "duration": 10
     },
     "run left": {
-      "description": "run left move backwards go sprint hold sustained",
+      "description": "run left sprint left hold left sustain left",
       "button": "left",
       "modifier": "B",
-      "mode": "hold"
+      "mode": "hold",
+      "duration": null
     },
     "run right": {
-      "description": "run right move forward go sprint hold sustained keep",
+      "description": "run right sprint right hold right sustain right",
       "button": "right",
       "modifier": "B",
-      "mode": "hold"
+      "mode": "hold",
+      "duration": null
     },
     "hold left": {
       "description": "hold left go back keep sustained maintain constant",
       "button": "left",
-      "mode": "hold"
+      "mode": "hold",
+      "duration": null
     },
     "hold right": {
       "description": "hold right go forward keep sustained maintain constant",
       "button": "right",
-      "mode": "hold"
+      "mode": "hold",
+      "duration": null
     },
     "mash jump": {
       "description": "mash jump repeatedly spam tap hit many times attack spam",
       "button": "A",
-      "mode": "mash"
+      "mode": "mash",
+      "duration": null
     },
     "mash fireball": {
       "description": "mash punch repeatedly spam tap hit many times attack spam fireball",
       "button": "B",
-      "mode": "mash"
+      "mode": "mash",
+      "duration": null
     },
     "stop": {
       "description": "stop cease halt end quit finish cancel pause done",
       "button": "",
-      "mode": "stop"
+      "mode": "stop",
+      "duration": null
     }
   },
   "environment": {

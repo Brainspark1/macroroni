@@ -40,11 +40,18 @@ class MarioVoiceController(NESVoiceController):
                 if entity.get("entity_group") == "ACTION"
             ]
 
+            sentence = None
+
             if target_words:
                 sentence = " ".join(target_words)
             else:
                 if action_words:
                     action_sentence = " ".join(action_words)
+
+                    if "##" in action_sentence:
+                        action_sentence = action_sentence.replace("#", "").replace(
+                            " ", ""
+                        )
 
                     print(f"Passing action to semantic mapper: {action_sentence}")
 
@@ -78,13 +85,11 @@ class MarioVoiceController(NESVoiceController):
                         )
                     else:
                         print(f"Could not resolve action from: {action_sentence}")
+
                     return
 
             # if no entities recognized/no sentence, do nothing - moving up to fix Audio Callback Error bug
-            if not sentence:
-                return
-
-            if not target_words:
+            if sentence is None or not sentence or not target_words:
                 return
 
             if "##" in sentence:
