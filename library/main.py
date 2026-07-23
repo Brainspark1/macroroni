@@ -4,7 +4,6 @@ from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 import cv2  # for the manual rendering of the game environment to see it
 from pynput import keyboard  # For better keyboard controls
 import time
-import threading
 import json
 
 from AutoEnemyTracking import AutoEnemyTracking
@@ -54,12 +53,14 @@ for action_name, action_info in json_data["actions"].items():
     }
 
 # initializing auto tracking controller for goombas
-auto_enemy_tracking = AutoEnemyTracking()
+auto_enemy_tracking = AutoEnemyTracking(
+    json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json"
+)
 voice_controller = MarioVoiceController(
     mapping_json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json",
     auto_tracking_class=auto_enemy_tracking,
     device_backend="mps",
-    initial_prompt="Look out for words such as goomba and koopa",
+    initial_prompt="Look out for words such as goomba, koopa, mash, spam and 'run right'",
 )
 
 
@@ -84,8 +85,6 @@ def handle_transcript(sentence):
 
     if name:
         print(f"Auto tracking started on {name}")
-
-        start_time = time.time()
     else:
         print("No recognized target to track.")
         auto_enemy_tracking.deactivate()
@@ -219,6 +218,7 @@ while True:
         mario_action = auto_enemy_tracking.get_action(
             enemy_profiles, info.get("score", 0)
         )  # and determine which action mario should go for
+    # manual mario control for now
     else:
         # helps mario's movement while jumping
         if move_down:

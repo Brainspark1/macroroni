@@ -16,7 +16,7 @@ class AutoEnemyTracking:
     # :param json_path - structure varies based on OS (mac, full path; windows, full path with r in front of string)
     def __init__(
         self,
-        json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json",
+        json_path,
         max_x_distance=15,
         max_kill_x=22,
         frames_decide_run=20,
@@ -52,6 +52,13 @@ class AutoEnemyTracking:
         self.action_type_name = None
         self.passing_action = False
 
+        self.base_action_type_name = None
+        self.base_action_mode = "once"
+        self.overlay_action_type_name = None
+        self.overlay_action_mode = "once"
+        self.overlay_action_hold_frames = 0
+        self.overlay_action_mash_counter = 0
+
         self.max_x_distance = max_x_distance
         self.max_x_kill = max_kill_x
         self.frames_decide_run = frames_decide_run
@@ -60,16 +67,11 @@ class AutoEnemyTracking:
         self.max_hold_frames = max_hold_frames
 
         self.action_hold_frames = 0
-        self.action_hold_durations = {
-            "jump": 8,
-            "run": 20,
-            "move left": 30,
-            "move right": 30,
-            "fireball": 5,
-            "duck": 10,
-            "track": 5,
-            "mash jump": 10,
-            "mash fireball": 10,
+
+        self.action_hold_duration_lookup = {
+            name: info["duration"]
+            for name, info in self.data["actions"].items()
+            if info["duration"] != None
         }
 
         self.action_mode = "once"
@@ -176,7 +178,7 @@ class AutoEnemyTracking:
         self.mash_frame_counter = 0
 
     # needs to return name and confidence score
-    def set_target_from_similarity(self, transcript_sentence, min_confidence=0.2):
+    def set_target_from_similarity(self, transcript_sentence, min_confidence=0.17):
         name, score = self.semantic_mapper.find_max_target_similarity(
             transcript_sentence
         )
@@ -206,7 +208,7 @@ class AutoEnemyTracking:
 
         self.action_type_name = name
         self.passing_action = True
-        self.action_hold_frames = self.action_hold_durations.get(
+        self.action_hold_frames = self.action_hold_duration_lookup.get(
             name, 10
         )  # default to holding for 10 frames
 
@@ -296,7 +298,8 @@ class AutoEnemyTracking:
             ]
 
             if not candidates:
-                candidates = enemy_profiles
+                self.deactivate()
+                return COMPLEX_MOVEMENT.index(["NOOP"])
         else:
             candidates = enemy_profiles
 
@@ -305,7 +308,7 @@ class AutoEnemyTracking:
             return COMPLEX_MOVEMENT.index(["NOOP"])
 
         # PIPELINE - picking a target and deciding to kill it or get closer
-        target = self.pick_target(enemy_profiles)
+        target = self.pick_target(candidates)
         self.target_slot = target["enemy_slot_number"]
         horizontal_distance = target["horizontal_distance"]
         time_to_collision = target["time_to_collision_frames"]
