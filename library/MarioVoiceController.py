@@ -55,22 +55,43 @@ class MarioVoiceController(NESVoiceController):
                     )
 
                     if action_name:
+                        # getting action mode from JSON file
+                        action_info = self.game_mappings.get("actions", {}).get(
+                            action_name, {}
+                        )  # default getting empty action dictionary
+                        mode = action_info.get("mode", "once")  # default to one press
+
+                        # if user wants to stop the mode action,
+                        if mode == "stop":
+                            print("Stop command received, cancelling all mode actions")
+                            self.auto_tracking_class.deactivate()
+                            self.auto_tracking_class.passing_action = False
+                            self.auto_tracking_class.action_type_name = None
+                            self.auto_tracking_class.action_mode = "once"
+                            self.auto_tracking_class.action_hold_frames = 0
+                            return
+
+                        self.auto_tracking_class.set_action_mode(mode)
+
                         print(
-                            f"Resolved action: '{action_name}' (confidence: {score:.2f})"
+                            f"Resolved action: '{action_name}' (confidence: {score:.2f}) with mode: {mode}"
                         )
                     else:
                         print(f"Could not resolve action from: {action_sentence}")
                     return
+
+            # if no entities recognized/no sentence, do nothing - moving up to fix Audio Callback Error bug
+            if not sentence:
+                return
+
+            if not target_words:
+                return
 
             if "##" in sentence:
                 sentence = sentence.replace("#", "").replace(" ", "")
 
             print(f"DEBUG raw entities: {entities}")
             print(f"DEBUG phrase passed to mapper: '{sentence}'")
-
-            # if no entities recognized/no sentence, do nothing
-            if not sentence:
-                return
 
             if (
                 sentence == "any"
