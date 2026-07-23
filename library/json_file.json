@@ -82,31 +82,75 @@
   "actions": {
     "jump": {
       "description": "jump hop leap bounce spring vault rise up",
-      "button": "A"
+      "button": "A",
+      "mode": "once"
     },
     "run": {
       "description": "run sprint dash go fast hurry",
-      "button": "B"
+      "button": "B",
+      "mode": "once"
     },
     "move left": {
       "description": "move left or backwards go back retreat",
-      "button": "left"
+      "button": "left",
+      "mode": "once"
     },
     "move right": {
       "description": "move right or forward go advance proceed",
-      "button": "right"
+      "button": "right",
+      "mode": "once"
     },
     "track": {
       "description": "going to an enemy's location follow chase pursue target",
-      "button": "E"
+      "button": "E",
+      "mode": "once"
     },
     "fireball": {
       "description": "shoot a pellet of fire throw fireball",
-      "button": "F"
+      "button": "F",
+      "mode": "once"
     },
     "duck": {
       "description": "duck or crouch down or get into a pipe",
-      "button": "S"
+      "button": "S",
+      "mode": "once"
+    },
+    "run left": {
+      "description": "run left move backwards go sprint hold sustained",
+      "button": "left",
+      "modifier": "B",
+      "mode": "hold"
+    },
+    "run right": {
+      "description": "run right move forward go sprint hold sustained keep",
+      "button": "right",
+      "modifier": "B",
+      "mode": "hold"
+    },
+    "hold left": {
+      "description": "hold left go back keep sustained maintain constant",
+      "button": "left",
+      "mode": "hold"
+    },
+    "hold right": {
+      "description": "hold right go forward keep sustained maintain constant",
+      "button": "right",
+      "mode": "hold"
+    },
+    "mash jump": {
+      "description": "mash jump repeatedly spam tap hit many times attack spam",
+      "button": "A",
+      "mode": "mash"
+    },
+    "mash fireball": {
+      "description": "mash punch repeatedly spam tap hit many times attack spam fireball",
+      "button": "B",
+      "mode": "mash"
+    },
+    "stop": {
+      "description": "stop cease halt end quit finish cancel pause done",
+      "button": "",
+      "mode": "stop"
     }
   },
   "environment": {

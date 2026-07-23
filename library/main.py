@@ -38,16 +38,25 @@ with open(
 ) as f:
     json_data = json.load(f)
 
-# action : list of buttons to be pressed for action to occur
-ACTION_BUTTON_MAP = {}
+# # action : list of buttons to be pressed for action to occur
+# ACTION_BUTTON_MAP = {}
+# for action_name, action_info in json_data["actions"].items():
+#     button = action_info.get("button", "").lower()
+#     ACTION_BUTTON_MAP[action_name] = button
+
+# action : list of buttons to be pressed for action to occur with modifier
+ACTION_INFO_MAP = {}
 for action_name, action_info in json_data["actions"].items():
-    button = action_info.get("button", "").lower()
-    ACTION_BUTTON_MAP[action_name] = button
+    ACTION_INFO_MAP[action_name] = {
+        "button": action_info.get("button", "").lower(),
+        "modifier": action_info.get("modifier", "").lower(),
+        "mode": action_info.get("mode", "once"),  # default to one execution
+    }
 
 # initializing auto tracking controller for goombas
 auto_enemy_tracking = AutoEnemyTracking()
 voice_controller = MarioVoiceController(
-    mapping_json_path="/Users/nihaalgarud/UTD_nes_voice/connecting_library/macroroni/library/json_file.json",
+    mapping_json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json",
     auto_tracking_class=auto_enemy_tracking,
     device_backend="mps",
     initial_prompt="Look out for words such as goomba and koopa",
@@ -133,14 +142,35 @@ while True:
 
     if auto_enemy_tracking.passing_action and auto_enemy_tracking.action_type_name:
         action_name = auto_enemy_tracking.action_type_name
-        button = ACTION_BUTTON_MAP.get(action_name)
+        # button = ACTION_INFO_MAP.get(action_name)
+
+        # action_info = json_data.get("actions", {}).get(action_name, {})
+        # modifier = action_info.get(
+        #     "modifier", ""
+        # )  # getting modifier if there, for example B key when run direction commands
+
+        action_info = ACTION_INFO_MAP.get(action_name, {})
+
+        if action_info:
+            button = action_info.get("button", "")
+            modifier = action_info.get("modifier", "")
+        else:
+            button = ""
+            modifier = ""
+
         if button:
             try:
                 # Handle both single button and multi-button combos
                 if button == "left":
-                    mario_action = COMPLEX_MOVEMENT.index(["left"])
+                    if modifier == "b":  # if run modifier,
+                        mario_action = COMPLEX_MOVEMENT.index(["left", "B"])
+                    else:
+                        mario_action = COMPLEX_MOVEMENT.index(["left"])
                 elif button == "right":
-                    mario_action = COMPLEX_MOVEMENT.index(["right"])
+                    if modifier == "b":
+                        mario_action = COMPLEX_MOVEMENT.index(["right", "B"])
+                    else:
+                        mario_action = COMPLEX_MOVEMENT.index(["right"])
                 elif button == "down":
                     mario_action = COMPLEX_MOVEMENT.index(["down"])
                 elif button == "a":
@@ -154,12 +184,31 @@ while True:
         else:
             mario_action = COMPLEX_MOVEMENT.index(["NOOP"])
 
-        action_hold_frames = getattr(auto_enemy_tracking, "action_hold_frames", 0)
-        if action_hold_frames <= 0:
-            auto_enemy_tracking.passing_action = False
-            auto_enemy_tracking.action_type_name = None
-        else:
-            auto_enemy_tracking.action_hold_frames = action_hold_frames - 1
+        # executing logic baesd on mode
+        mode = auto_enemy_tracking.action_mode
+
+        # holding mode shouldn't get encapsulated into else statement, so separated
+        if mode == "hold":
+            pass
+
+        # mashing in 4-frame cycle - 2 frames pressing button, 2 frames releasing button
+        elif mode == "mash":
+            auto_enemy_tracking.mash_frame_counter += 1
+
+            # if in frames 3-4, release button to mash
+            if auto_enemy_tracking.mash_frame_counter % 4 > 2:
+                mario_action = COMPLEX_MOVEMENT.index(["NOOP"])
+
+        else:  # mode = once
+            if auto_enemy_tracking.action_hold_frames <= 0:
+                auto_enemy_tracking.passing_action = False
+                auto_enemy_tracking.action_type_name = None
+                auto_enemy_tracking.action_mode = "once"
+            else:
+                auto_enemy_tracking.action_hold_frames = (
+                    auto_enemy_tracking.action_hold_frames - 1
+                )
+
     elif auto_enemy_tracking.active:
         positions = auto_enemy_tracking.get_game_positions(
             env

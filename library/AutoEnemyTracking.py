@@ -68,7 +68,12 @@ class AutoEnemyTracking:
             "fireball": 5,
             "duck": 10,
             "track": 5,
+            "mash jump": 10,
+            "mash fireball": 10,
         }
+
+        self.action_mode = "once"
+        self.mash_frame_counter = 0
 
         (
             self.character_absolute_page_number,
@@ -150,6 +155,8 @@ class AutoEnemyTracking:
         self.target_type_name = None
         self.action_type_name = None
         self.action_hold_frames = 0
+        self.action_mode = "once"
+        self.mash_frame_counter = 0
 
     # method to stop auto tracking/set everything to default value
     def deactivate(self):
@@ -165,6 +172,8 @@ class AutoEnemyTracking:
         self.target_type_name = None
         self.action_type_name = None
         self.action_hold_frames = 0
+        self.action_mode = "once"
+        self.mash_frame_counter = 0
 
     # needs to return name and confidence score
     def set_target_from_similarity(self, transcript_sentence, min_confidence=0.2):
@@ -491,6 +500,10 @@ class AutoEnemyTracking:
 
         # returning calculated metrics
         return enemy_metrics
+
+    def set_action_mode(self, mode):
+        self.action_mode = mode
+        self.mash_frame_counter = 0
 
     def read_json_file(self, json_path):
         with open(json_path, "r") as file:
