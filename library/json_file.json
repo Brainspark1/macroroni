@@ -7,7 +7,7 @@
   "targets": {
     "goomba": {
       "address": "0x06",
-      "description": "Short, ground-dwelling brown mushroom creature with a scowling face and triangular white eyes - goomba"
+      "description": "Short, ground-dwelling brown creature with a scowling face and triangular white eyes - goomba"
     },
     "red_koopa": {
       "address": "0x01",
@@ -31,7 +31,7 @@
     },
     "green_koopa": {
       "address": "0x00",
-      "description": "Bipedal yellow turtle with a prominent green shell, large head, and oval eyes - green koopa"
+      "description": "Bipedal yellow turtle with a prominent green shell, large head, and oval eyes - koopa green koopa"
     },
     "hammer_bro": {
       "address": "0x09",
@@ -51,22 +51,27 @@
     },
     "mushroom_powerup": {
       "address": "0x2C",
+      "object_id": "0x00",
       "description": "Consumable item with a short white stalk and a bright orange-red cap adorned with white spots - mushroom powerup"
     },
     "fire_flower_powerup": {
       "address": "0x2E",
+      "object_id": "0x01",
       "description": "Stationary flower with a central face, surrounded by alternating blinking petals of white, orange, and red - fire flower powerup"
     },
     "star_powerup": {
       "address": "0x2F",
+      "object_id": "0x02",
       "description": "Dynamic, five-pointed star icon with eyes, continuously blinking between yellow and orange hues - start powerup"
     },
     "one_up_powerup": {
       "address": "0x30",
+      "object_id": "0x03",
       "description": "Consumable item with a short white stalk and a distinct bright green cap adorned with white spots - one up powerup"
     },
     "coin": {
       "address": "0x0030",
+      "object_id": "0x0C",
       "description": "Small, gleaming gold oval or circular currency item with a distinctive inner marking - coin"
     },
     "enemy": {
@@ -78,7 +83,15 @@
       "enemy_vertical_screen_position": "0x00CF"
     }
   },
-  "items": {},
+  "items": {
+    "object_sprites": {
+      "active_state": "0x0014",
+      "x_screen": "0x008C",
+      "y_position": "0x00D4",
+      "object_type": "0x0039",
+      "slot_count": 1
+    }
+  },
   "actions": {
     "jump": {
       "description": "jump hop leap bounce spring vault rise up",

@@ -208,16 +208,28 @@ while True:
                     auto_enemy_tracking.action_hold_frames - 1
                 )
 
+    # elif auto_enemy_tracking.active:
+    #     positions = auto_enemy_tracking.get_game_positions(env)  # get positions of enemies
+    #     enemy_profiles = auto_enemy_tracking.get_distances_to_enemies(env, positions)  # get metrics of enemies
+    #     mario_action = auto_enemy_tracking.get_action(enemy_profiles, info.get("score", 0))  # and determine which action mario should go for
     elif auto_enemy_tracking.active:
         positions = auto_enemy_tracking.get_game_positions(
             env
-        )  # get positions of enemies
-        enemy_profiles = auto_enemy_tracking.get_distances_to_enemies(
-            env, positions
-        )  # get metrics of enemies
-        mario_action = auto_enemy_tracking.get_action(
-            enemy_profiles, info.get("score", 0)
-        )  # and determine which action mario should go for
+        )  # get positions of objects in game
+
+        if auto_enemy_tracking.powerup_active:
+            powerup_positions = auto_enemy_tracking.get_powerup_positions(env)
+            powerup_profiles = auto_enemy_tracking.get_distances_to_powerups(
+                positions, powerup_positions
+            )
+            mario_action = auto_enemy_tracking.get_powerup_action(powerup_profiles)
+        else:
+            enemy_profiles = auto_enemy_tracking.get_distances_to_enemies(
+                env, positions
+            )
+            mario_action = auto_enemy_tracking.get_action(
+                enemy_profiles, info.get("score", 0)
+            )
     # manual mario control for now
     else:
         # helps mario's movement while jumping

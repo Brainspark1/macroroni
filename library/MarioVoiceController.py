@@ -114,9 +114,13 @@ class MarioVoiceController(NESVoiceController):
             name, score = self.auto_tracking_class.activate_set_target(sentence)
 
             if name:
-                logger.info(
-                    f"Auto tracking started on {name} with a confidence of {score:.2f})"
-                )
+                # if name contains powerup ending or is a coin (is a powerup)
+                if "_powerup" in name or name == "coin":
+                    self.auto_tracking_class.powerup_active = True
+                    logger.info(f"Powerup tracking started on {name}")
+                else:
+                    self.auto_tracking_class.powerup_active = False
+                    logger.info(f"Enemy tracking started on {name}")
             else:
                 logger.info(
                     f"Deactivating auto tracking, no recognized target in: {sentence}"
