@@ -10,9 +10,16 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification, pipelin
 
 logger = logging.getLogger("nes_voice")
 
+
 class NESVoiceController:
-    def __init__(self, mapping_json_path, device_backend="mps", whisper_model_size="tiny.en", initial_prompt=None):
-        """        
+    def __init__(
+        self,
+        mapping_json_path,
+        device_backend="mps",
+        whisper_model_size="tiny.en",
+        initial_prompt=None,
+    ):
+        """
         :param mapping_json_path: path to the game-specific json file containing character/item/target memory addresses
         :param device_backend: hardware backend currently found in user's computer (write either "mps" for MacOS, "cuda" for Nvidia, or "cpu")
         :param model_size: size variant for OpenAI Whisper core (defaulted to tiny English model for minimal latency issues)
@@ -21,25 +28,28 @@ class NESVoiceController:
 
         self.lock = threading.Lock()
         self.device_backend = device_backend
-        self.initial_prompt = initial_prompt or "Make sure to listen for NES gameplay commands like \"jump on that enemy.\""
-        
+        self.initial_prompt = (
+            initial_prompt
+            or 'Make sure to listen for NES gameplay commands like "jump on that enemy."'
+        )
+
         # loading game-specific memory mappings from json file
         self.game_mappings = {}
         self.load_game_mappings(mapping_json_path)
 
         # initializing transcription and ner pipelines
         self._init_transcription_engine(whisper_model_size)
-        self._init_ner_pipeline("Saggarwal/token_bert") # passing in bert model
-        
+        self._init_ner_pipeline("Saggarwal/NESBERT")  # passing in bert model
+
         # setting up classes to capture audio
         self.recognizer = sr.Recognizer()
-        self.mic = sr.Microphone(sample_rate=16000) # fixed recording rate at 16 kHz
+        self.mic = sr.Microphone(sample_rate=16000)  # fixed recording rate at 16 kHz
         self._calibrate_mic()
 
     # method to load and parse the json file that maps objects to memory addresses
     def load_game_mappings(self, json_path):
         try:
-            with open(json_path, 'r') as f:
+            with open(json_path, "r") as f:
                 content = f.read()
 
             self.game_mappings = json.loads(content)
@@ -55,7 +65,7 @@ class NESVoiceController:
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModelForTokenClassification.from_pretrained(model_path)
-        
+
         # checking hardware components found
         if self.device_backend == "cuda":
             device_str = "cuda:0"
@@ -71,11 +81,11 @@ class NESVoiceController:
 
         # loading the pipeline
         self.nlp_pipeline = pipeline(
-            "token-classification", 
-            model=self.model, 
-            tokenizer=self.tokenizer, 
+            "token-classification",
+            model=self.model,
+            tokenizer=self.tokenizer,
             aggregation_strategy="simple",
-            device=device_str
+            device=device_str,
         )
 
     # method to set up whisper engine based on hardware availability
@@ -87,25 +97,35 @@ class NESVoiceController:
                 self.mlx_whisper = mlx_whisper
                 self.whisper_model_path = f"mlx-community/whisper-{model_size}-mlx"
 
-                logger.info(f"Initialized MPS Whisper backend: {self.whisper_model_path}")
+                logger.info(
+                    f"Initialized MPS Whisper backend: {self.whisper_model_path}"
+                )
 
             # error if mlx_whisper not imported
             except ImportError:
-                raise ImportError("mlx_whisper is required for MPS. Run: pip install mlx-whisper")
-        
+                raise ImportError(
+                    "mlx_whisper is required for MPS. Run: pip install mlx-whisper"
+                )
+
         elif self.device_backend == "cuda":
             try:
                 from faster_whisper import WhisperModel
 
-                self.whisper_model = WhisperModel(model_size, device="cuda", compute_type="float16")
+                self.whisper_model = WhisperModel(
+                    model_size, device="cuda", compute_type="float16"
+                )
 
                 logger.info(f"Initialized CUDA Whisper backend (Size: {model_size})")
 
             # error if faster_whisper not imported
             except ImportError:
-                raise ImportError("faster_whisper is required for CUDA. Run: pip install faster-whisper")
+                raise ImportError(
+                    "faster_whisper is required for CUDA. Run: pip install faster-whisper"
+                )
         else:
-            raise ValueError("Unsupported backend model, choose either 'mps' or 'cuda'.")
+            raise ValueError(
+                "Unsupported backend model, choose either 'mps' or 'cuda'."
+            )
 
     # method to calibrate microphone based on background noise
     def _calibrate_mic(self, duration=2):
@@ -128,19 +148,20 @@ class NESVoiceController:
     def transcribe_audio(self, audio_np):
         if self.device_backend == "mps":
             result = self.mlx_whisper.transcribe(
-                audio_np, path_or_hf_repo=self.whisper_model_path, 
-                language="en", 
-                initial_prompt=self.initial_prompt
+                audio_np,
+                path_or_hf_repo=self.whisper_model_path,
+                language="en",
+                initial_prompt=self.initial_prompt,
             )
 
             # returning text part of transcription
             return result["text"].strip()
-        
+
         elif self.device_backend == "cuda":
-            segments, _ = self.whisper_model.transcribe( # only parsing the segments, discarding everything else using _ operator in explosion
-                audio_np, 
-                language="en",
-                initial_prompt=self.initial_prompt
+            segments, _ = (
+                self.whisper_model.transcribe(  # only parsing the segments, discarding everything else using _ operator in explosion
+                    audio_np, language="en", initial_prompt=self.initial_prompt
+                )
             )
 
             # joining collected segments together into transcribed sentence
@@ -152,7 +173,7 @@ class NESVoiceController:
         # return nothing if no text to pass through the bert
         if not text:
             return []
-        
+
         return self.nlp_pipeline(text)
 
     def audio_callback(self, recognizer, audio):
@@ -160,15 +181,17 @@ class NESVoiceController:
             start_time = time.time()
             audio_np = self.audio_to_numpy(audio)
             raw_text = self.transcribe_audio(audio_np)
-            
+
             if not raw_text or len(raw_text.split()) > 15:
                 return
 
             raw_text = raw_text.lower()
             entities = self.extract_entities(raw_text)
-            
-            logger.info(f"Transcript: '{raw_text}' | NER Tags: {entities} | Latency: {time.time() - start_time:.4f}s")
-            
+
+            logger.info(
+                f"Transcript: '{raw_text}' | NER Tags: {entities} | Latency: {time.time() - start_time:.4f}s"
+            )
+
             # if entities have been recognized, reference them with json mapping into memory adddresses for bert to use
             if entities:
                 self.process_game_commands(entities)
@@ -176,11 +199,15 @@ class NESVoiceController:
         except Exception as e:
             logger.error(f"Audio Callback Error: {e}")
 
-    def start_listening(self, phrase_time_limit=1.5): 
-        return self.recognizer.listen_in_background(self.mic, self.audio_callback, phrase_time_limit=phrase_time_limit)
+    def start_listening(self, phrase_time_limit=1.5):
+        return self.recognizer.listen_in_background(
+            self.mic, self.audio_callback, phrase_time_limit=phrase_time_limit
+        )
 
     # method must be overriden by developers for emulator loop to translate extracted entities into use case/game controls
     def process_game_commands(self, entities):
 
         # raise error if not implemented
-        raise NotImplementedError("Subclasses or game wrappers must implement `process_game_commands(self, entities)`")
+        raise NotImplementedError(
+            "Subclasses or game wrappers must implement `process_game_commands(self, entities)`"
+        )

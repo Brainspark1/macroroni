@@ -1,88 +1,188 @@
 {
-    "characters": {
-      "absolute_page_number": "0x006D",
-      "vertical_screen_position": "0x00CE",
-      "horizontal_position": "0x0086"
+  "characters": {
+    "absolute_page_number": "0x006D",
+    "vertical_screen_position": "0x00CE",
+    "horizontal_position": "0x0086"
+  },
+  "targets": {
+    "goomba": {
+      "address": "0x06",
+      "description": "Short, ground-dwelling brown creature with a scowling face and triangular white eyes - goomba"
     },
-    "targets": {
-      "goomba": {
-        "address": "0x06",
-        "description": "Short, ground-dwelling brown mushroom creature with a scowling face and triangular white eyes"
-      },
-      "red_koopa": {
-        "address": "0x01",
-        "description": "Bipedal yellow turtle with a prominent red shell, large head, and oval eyes"
-      },
-      "buzzy_beetle": {
-        "address": "0x02",
-        "description": "Short, ground-dwelling black-skinned creature encased in a smooth, domed blue shell"
-      },
-      "red_koopa_paratroopa": {
-        "address": "0x03",
-        "description": "Bipedal yellow turtle with a red shell, large oval eyes, and a pair of white fluttering wings"
-      },
-      "green_koopa_paratroopa": {
-        "address": "0x04",
-        "description": "Bipedal yellow turtle with a green shell, large oval eyes, and a pair of white fluttering wings"
-      },
-      "piranha_plant": {
-        "address": "0x0D",
-        "description": "Stationary green botanical enemy with a wide, toothy maw, emerging upward from a green pipe"
-      },
-      "green_koopa": {
-        "address": "0x00",
-        "description": "Bipedal yellow turtle with a prominent green shell, large head, and oval eyes"
-      },
-      "hammer_bro": {
-        "address": "0x09",
-        "description": "Aggressive, standing bipedal turtle wearing a white and blue helmet, actively throwing projectiles"
-      },
-      "lakitu": {
-        "address": "0x0E",
-        "description": "Bespectacled, green-faced creature hovering inside a smiling, white puffy cloud"
-      },
-      "spiny": {
-        "address": "0x0F",
-        "description": "Small, quadrupedal red creature covered in sharp, prominent white spikes across its back"
-      },
-      "bowser": {
-        "address": "0x2D",
-        "description": "Large, green, reptilian boss with a spiked shell, orange hair, and a roaring fire-breathing mouth"
-      },
-      "mushroom_powerup": {
-        "address": "0x2C",
-        "description": "Consumable item with a short white stalk and a bright orange-red cap adorned with white spots"
-      },
-      "fire_flower_powerup": {
-        "address": "0x2E",
-        "description": "Stationary flower with a central face, surrounded by alternating blinking petals of white, orange, and red"
-      },
-      "star_powerup": {
-        "address": "0x2F",
-        "description": "Dynamic, five-pointed star icon with eyes, continuously blinking between yellow and orange hues"
-      },
-      "one_up_powerup": {
-        "address": "0x30",
-        "description": "Consumable item with a short white stalk and a distinct bright green cap adorned with white spots"
-      },
-      "coin": {
-        "address": "0x0030",
-        "description": "Small, gleaming gold oval or circular currency item with a distinctive inner marking"
-      },
-      "enemy": {
-        "active_state": "0x000F",
-        "enemy_type": "0x0016",
-        "horizontal_velocity": "0x0058",
-        "absolute_map_num": "0x006E",
-        "horizontal_page_position": "0x0087",
-        "enemy_vertical_screen_position": "0x00CF"
-      }
+    "red_koopa": {
+      "address": "0x01",
+      "description": "Bipedal yellow turtle with a prominent red shell, large head, and oval eyes - red koopa"
     },
-    "items": {
+    "buzzy_beetle": {
+      "address": "0x02",
+      "description": "Short, ground-dwelling black-skinned creature encased in a smooth, domed blue shell - buzzy beetle"
     },
-    "environment": {
-      "time_hundred": "0x07F8",
-      "time_ten": "0x07F9",
-      "time_one": "0x07FA"
+    "red_koopa_paratroopa": {
+      "address": "0x03",
+      "description": "Bipedal yellow turtle with a red shell, large oval eyes, and a pair of white fluttering wings - red koopa paratroopa"
+    },
+    "green_koopa_paratroopa": {
+      "address": "0x04",
+      "description": "Bipedal yellow turtle with a green shell, large oval eyes, and a pair of white fluttering wings - green koopa paratroopa"
+    },
+    "piranha_plant": {
+      "address": "0x0D",
+      "description": "Stationary green botanical enemy with a wide, toothy maw, emerging upward from a green pipe - piranha plant"
+    },
+    "green_koopa": {
+      "address": "0x00",
+      "description": "Bipedal yellow turtle with a prominent green shell, large head, and oval eyes - koopa green koopa"
+    },
+    "hammer_bro": {
+      "address": "0x09",
+      "description": "Aggressive, standing bipedal turtle wearing a white and blue helmet, actively throwing projectiles - hammer bro"
+    },
+    "lakitu": {
+      "address": "0x0E",
+      "description": "Bespectacled, green-faced creature hovering inside a smiling, white puffy cloud - lakitu"
+    },
+    "spiny": {
+      "address": "0x0F",
+      "description": "Small, quadrupedal red creature covered in sharp, prominent white spikes across its back - spiny"
+    },
+    "bowser": {
+      "address": "0x2D",
+      "description": "Large, green, reptilian boss with a spiked shell, orange hair, and a roaring fire-breathing mouth - bowser"
+    },
+    "mushroom_powerup": {
+      "address": "0x2C",
+      "object_id": "0x00",
+      "description": "Consumable item with a short white stalk and a bright orange-red cap adorned with white spots - mushroom powerup"
+    },
+    "fire_flower_powerup": {
+      "address": "0x2E",
+      "object_id": "0x01",
+      "description": "Stationary flower with a central face, surrounded by alternating blinking petals of white, orange, and red - fire flower powerup"
+    },
+    "star_powerup": {
+      "address": "0x2F",
+      "object_id": "0x02",
+      "description": "Dynamic, five-pointed star icon with eyes, continuously blinking between yellow and orange hues - start powerup"
+    },
+    "one_up_powerup": {
+      "address": "0x30",
+      "object_id": "0x03",
+      "description": "Consumable item with a short white stalk and a distinct bright green cap adorned with white spots - one up powerup"
+    },
+    "coin": {
+      "address": "0x0030",
+      "object_id": "0x0C",
+      "description": "Small, gleaming gold oval or circular currency item with a distinctive inner marking - coin"
+    },
+    "enemy": {
+      "active_state": "0x000F",
+      "enemy_type": "0x0016",
+      "horizontal_velocity": "0x0058",
+      "absolute_map_num": "0x006E",
+      "horizontal_page_position": "0x0087",
+      "enemy_vertical_screen_position": "0x00CF"
     }
+  },
+  "items": {
+    "object_sprites": {
+      "active_state": "0x0014",
+      "x_screen": "0x008C",
+      "y_position": "0x00D4",
+      "object_type": "0x0039",
+      "slot_count": 1
+    }
+  },
+  "actions": {
+    "jump": {
+      "description": "jump hop leap bounce spring vault rise up",
+      "button": "A",
+      "mode": "once",
+      "duration": 8
+    },
+    "run": {
+      "description": "run sprint dash go fast hurry",
+      "button": "B",
+      "mode": "once",
+      "duration": 20
+    },
+    "move left": {
+      "description": "move left backwards go left back retreat",
+      "button": "left",
+      "mode": "once",
+      "duration": 30
+    },
+    "move right": {
+      "description": "move right forwards go right advance proceed",
+      "button": "right",
+      "mode": "once",
+      "duration": 30
+    },
+    "track": {
+      "description": "going to an enemy's location follow chase pursue target",
+      "button": "E",
+      "mode": "once",
+      "duration": null
+    },
+    "fireball": {
+      "description": "shoot a pellet of fire throw fireball",
+      "button": "F",
+      "mode": "once",
+      "duration": 5
+    },
+    "duck": {
+      "description": "duck or crouch down or get into a pipe",
+      "button": "S",
+      "mode": "once",
+      "duration": 10
+    },
+    "run left": {
+      "description": "run left sprint left hold left sustain left",
+      "button": "left",
+      "modifier": "B",
+      "mode": "hold",
+      "duration": null
+    },
+    "run right": {
+      "description": "run right sprint right hold right sustain right",
+      "button": "right",
+      "modifier": "B",
+      "mode": "hold",
+      "duration": null
+    },
+    "hold left": {
+      "description": "hold left go back keep sustained maintain constant",
+      "button": "left",
+      "mode": "hold",
+      "duration": null
+    },
+    "hold right": {
+      "description": "hold right go forward keep sustained maintain constant",
+      "button": "right",
+      "mode": "hold",
+      "duration": null
+    },
+    "mash jump": {
+      "description": "mash jump repeatedly spam tap hit many times attack spam",
+      "button": "A",
+      "mode": "mash",
+      "duration": null
+    },
+    "mash fireball": {
+      "description": "mash punch repeatedly spam tap hit many times attack spam fireball",
+      "button": "B",
+      "mode": "mash",
+      "duration": null
+    },
+    "stop": {
+      "description": "stop cease halt end quit finish cancel pause done",
+      "button": "",
+      "mode": "stop",
+      "duration": null
+    }
+  },
+  "environment": {
+    "time_hundred": "0x07F8",
+    "time_ten": "0x07F9",
+    "time_one": "0x07FA"
   }
+}

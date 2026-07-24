@@ -1,0 +1,2 @@
+3. increase consistency with run right
+5. implement overlaid actions to jump while running
