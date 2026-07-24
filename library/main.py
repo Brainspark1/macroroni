@@ -6,7 +6,9 @@ from pynput import keyboard  # For better keyboard controls
 import time
 import json
 
-from AutoEnemyTracking import AutoEnemyTracking
+from passing_actions.macroroni.library.AutoEnemyPowerupTracking import (
+    AutoEnemyPowerupTracking,
+)
 from MarioVoiceController import MarioVoiceController
 
 # most code taken from Joshua's existing file to run the environment/emulator
@@ -53,7 +55,7 @@ for action_name, action_info in json_data["actions"].items():
     }
 
 # initializing auto tracking controller for goombas
-auto_enemy_tracking = AutoEnemyTracking(
+auto_enemy_tracking = AutoEnemyPowerupTracking(
     json_path="/Users/nihaalgarud/UTD_nes_voice/passing_actions/macroroni/library/json_file.json"
 )
 voice_controller = MarioVoiceController(

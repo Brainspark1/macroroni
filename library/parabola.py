@@ -6,7 +6,7 @@ from pynput import keyboard  # For better keyboard controls
 import time
 import threading
 
-from AutoEnemyTracking import AutoEnemyTracking
+from AutoEnemyTracking import AutoEnemyPowerupTracking
 
 # most code taken from Joshua's existing file to run the environment/emulator
 env = gym_super_mario_bros.make(
@@ -31,7 +31,7 @@ jump_start = 0
 awaiting_target_input = False
 
 # initializing auto tracking controller for goombas
-auto_enemy_tracking = AutoEnemyTracking()
+auto_enemy_tracking = AutoEnemyPowerupTracking()
 
 
 # method to handle incoming user transcripts into emulator, connect to whisper
