@@ -4,7 +4,7 @@ import json
 from SemanticMapper import SemanticMapper
 
 
-class AutoEnemyTracking:
+class AutoEnemyPowerupTracking:
     # defining constants
     # MAX_X_DISTANCE = 15  # how far mario should be at most from a goomba before trying to jump on it
     # MAX_KILL_X = 22 # the maximum distance between mario and goomba that initiates mario's actions to jump on the goomba
@@ -76,6 +76,23 @@ class AutoEnemyTracking:
 
         self.action_mode = "once"
         self.mash_frame_counter = 0
+
+        self.object_sprite_data = self.data.get("items", {}).get("object_sprites", {})
+        self.powerup_active = False
+
+        if self.object_sprite_data:
+            self.object_active_state = int(self.object_sprite_data["active_state"], 16)
+            self.object_x_screen = int(self.object_sprite_data["x_screen"], 16)
+            self.object_y_position = int(self.object_sprite_data["y_position"], 16)
+            self.object_type_address = int(self.object_sprite_data["object_type"], 16)
+            self.object_slot_count = int(
+                self.object_sprite_data.get("slot_count", 8)
+            )  # default to 8 slots
+
+        self.object_id_lookup = {}
+        for name, info in self.data["targets"].items():
+            if "object_id" in info:
+                self.object_id_lookup[name] = int(info["object_id"], 16)
 
         (
             self.character_absolute_page_number,
@@ -159,6 +176,7 @@ class AutoEnemyTracking:
         self.action_hold_frames = 0
         self.action_mode = "once"
         self.mash_frame_counter = 0
+        self.powerup_active = False
 
     # method to stop auto tracking/set everything to default value
     def deactivate(self):
@@ -176,9 +194,10 @@ class AutoEnemyTracking:
         self.action_hold_frames = 0
         self.action_mode = "once"
         self.mash_frame_counter = 0
+        self.powerup_active = False
 
     # needs to return name and confidence score
-    def set_target_from_similarity(self, transcript_sentence, min_confidence=0.17):
+    def set_target_from_similarity(self, transcript_sentence, min_confidence=0.14):
         name, score = self.semantic_mapper.find_max_target_similarity(
             transcript_sentence
         )
@@ -359,6 +378,45 @@ class AutoEnemyTracking:
         else:
             return COMPLEX_MOVEMENT.index(["left", "B"])
 
+    # method ot get action to be performed to get to powerup
+    def get_powerup_action(self, powerup_profiles):
+        if not powerup_profiles:
+            self.deactivate()
+            return COMPLEX_MOVEMENT.index(["NOOP"])
+
+        if self.target_type_name is not None:
+            target_object_address = self.object_id_lookup.get(self.target_type_name)
+
+            if target_object_address is not None:
+                candidates = [
+                    powerup
+                    for powerup in powerup_profiles
+                    if powerup["object_type"] == target_object_address
+                ]
+            else:
+                candidates = powerup_profiles
+
+            if not candidates:
+                self.deactivate()
+                return COMPLEX_MOVEMENT.index(["NOOP"])
+        else:
+            candidates = powerup_profiles
+
+        target = min(
+            candidates, key=lambda p: p["distance"]
+        )  # getting target by searching through each distance and finding the minimum one
+        horizontal_distance = target["horizontal_distance"]
+
+        if target["distance"] < 1.0:  # Very close — assume collected
+            print(f"Powerup collected! Deactivating powerup tracking.")
+            self.deactivate()
+            return COMPLEX_MOVEMENT.index(["NOOP"])
+
+        if horizontal_distance >= 0:
+            return COMPLEX_MOVEMENT.index(["right", "B"])
+        else:
+            return COMPLEX_MOVEMENT.index(["left", "B"])
+
     # method to confirm whether or not to kill the goomba
     def confirming_stopping_kill(self, current_score):
         if not self.awaiting_kill_confirmation:
@@ -427,6 +485,36 @@ class AutoEnemyTracking:
 
         # returning dictionary containing mario's x and y positions, and the positions of enemies in each slot
         return {"mario": {"x": mario_x_pos, "y": mario_y_pos}, "enemies": enemy_slots}
+
+    # mirrored
+    def get_powerup_positions(self, env):
+        ram = env.unwrapped.ram
+        powerup_slots = []
+
+        if not self.object_sprite_data:
+            return []
+
+        for i in range(self.object_slot_count):
+            active = ram[self.object_active_state + i]
+
+            if active > 0:  # if is active
+                x_screen = int(ram[self.object_x_screen + i])
+                y_pos = int(ram[self.object_y_position + i])
+                obj_type = int(ram[self.object_type_address + i])
+
+                absolute_x_pos = (self.character_absolute_page_number * 256) + x_screen
+
+                powerup_slots.append(
+                    {
+                        "slot": i,
+                        "x": absolute_x_pos,
+                        "y": y_pos,
+                        "object_type": obj_type,
+                        "active_state": active,
+                    }
+                )
+
+        return powerup_slots
 
     # method to get the horizontal and vertical distances between mario and enemies
     def get_distances_to_enemies(self, env, positions):
@@ -503,6 +591,33 @@ class AutoEnemyTracking:
 
         # returning calculated metrics
         return enemy_metrics
+
+    def get_distances_to_powerups(self, mario_positions, powerup_positions):
+        mario_x = mario_positions["mario"]["x"]
+        mario_y = mario_positions["mario"]["y"]
+
+        powerup_metrics = []
+
+        for powerup in powerup_positions:
+            horizontal_distance = powerup["x"] - mario_x
+            vertical_distance = powerup["y"] - mario_y
+
+            distance = (
+                horizontal_distance**2 + vertical_distance**2
+            ) ** 0.5  # finding Euclidean distance between powerup and mario
+
+            powerup_metrics.append(
+                {
+                    "powerup_slot": powerup["slot"],
+                    "object_type": powerup["object_type"],
+                    "horizontal_distance": horizontal_distance,
+                    "vertical_distance": vertical_distance,
+                    "distance": round(distance, 2),
+                    "is_available": True,  # available to be picked up/collected
+                }
+            )
+
+        return powerup_metrics
 
     def set_action_mode(self, mode):
         self.action_mode = mode
