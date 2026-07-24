@@ -1,14 +1,10 @@
 numpy==1.23.5
-gym==0.26.2
-gym-super-mario-bros
 nes-py
-
 opencv-python
 pandas
 scikit-learn
 speechrecognition
 mlx-whisper
-
 torch
 transformers
 evaluate

@@ -9,8 +9,9 @@
       "address": "0x06",
       "description": "Short, ground-dwelling brown creature with a scowling face and triangular white eyes - goomba",
       "tracking": {
+          "track_distance": 22,
           "action": "jump",
-          "validation": ""
+          "validation": "change_state"
       }
     },
     "red_koopa": {
